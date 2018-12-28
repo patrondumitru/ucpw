@@ -1,0 +1,13 @@
+{
+    "name": "UCPW",
+    "require": {
+        "firebase/php-jwt": "^3.0",
+        "google/recaptcha": "^1.2",
+        "league/csv": "^7.0",
+        "zircote/swagger-php": "^2.0",
+		"phpoffice/phpspreadsheet": "^1.5",
+        "guzzlehttp/guzzle": "^6.3",
+        "php-http/message": "^1.7"
+
+    }
+}
