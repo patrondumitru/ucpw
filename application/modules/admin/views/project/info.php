@@ -128,22 +128,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <?php 
                     $folder['open'] = 'fa-folder-open-o';
                     $folder['close'] = 'fa-folder-open';
-                    
-                   // debug($data);
-                   // debug($completed_form);
-                   // debug($table_column);
+
                     foreach($completed_form as $row) {?>
                       <tr>
                         <td><input type="checkbox" class='form_completed' id="<?php echo $row->form_comp_id;?>"></td>
                         <td class="mailbox-star"><a href="#"><i class="fa <?php echo $folder[$row->status]; ?>  text-yellow"></i></a></td>                    
                         <td class="mailbox-date"><?php echo anchor('admin/project/form_data/'.$row->form_comp_id, $row->date_created); ?></td>
                           <?php 
-                              foreach($table_column as $name_column){
-                                foreach($data[$row->form_comp_id] as $cell){                                
-                                  if ($cell->str_field_name == $name_column) {
-                                    echo '<td class="mailbox-name">'.$this->project->get_field_value($cell->structure_id, $cell->str_type, $cell->value).'</a></td>';
+                              foreach($table_column as $name_column){                                
+                                  foreach($data[$row->form_comp_id] as $cell){
+                                    if ($cell->str_field_name == $name_column) {
+                                      echo '<td class="mailbox-name">'.$this->project->get_field_value($cell->structure_id, $cell->str_type, $cell->value).'</a></td>';
+                                    }
                                   }
-                                }
                               }
                           ?>                    
                         

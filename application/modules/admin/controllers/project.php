@@ -180,7 +180,7 @@ public function index()
 	        		$this->mPageTitle = lang('project_info_title_page').' <b>"'.$project->prj_name.'"</b>';	
 	        		$this->mViewData['project'] = $project;
 	        		$this->mViewData['table_column'] = $this->project->get_form_table_info($form_id);
-					$this->mViewData['completed_form'] = $this->project->get_completed_form($form_id,$id_project); 
+					$this->mViewData['completed_form'] = $this->project->get_completed_form($form_id,$id_project);
 					$this->mViewData['data'] = $this->project->get_forms_data($form_id, $id_project);
 					$this->mViewData['project_id'] = $id_project;
 					$this->mViewData['form_id'] = $form_id;
@@ -401,7 +401,7 @@ public function index()
 			    $spreadsheet->getActiveSheet()->setCellValue(chr($char+count($column)+1) . $rowexcel, Date::PHPToExcel($completed_form[$r]['date_created']))
 			    ->getStyle(chr($char+count($column)+1) . $rowexcel)
     				->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_DATE_DATETIME);
-			    $spreadsheet->getActiveSheet()->setCellValue(chr($char+count($column)+2) . $rowexcel, $this->user->name($completed_form[$r]['user_created']));			    
+			    $spreadsheet->getActiveSheet()->setCellValue(chr($char+count($column)+2) . $rowexcel, $this->user->admin_name($completed_form[$r]['user_created']));			    
 			    $i++;
 			}
 			//$spreadsheet->getActiveSheet()->removeRow($baseRow - 1, 1);

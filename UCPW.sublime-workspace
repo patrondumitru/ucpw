@@ -1,0 +1,624 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"a",
+				"anchor\tCI - Anchor Helper"
+			],
+			[
+				"d",
+				"dcgettext"
+			],
+			[
+				"form",
+				"form_open\tCI - Form Open"
+			],
+			[
+				"cons",
+				"constant"
+			],
+			[
+				"is_nu",
+				"is_null"
+			],
+			[
+				"id",
+				"id_project"
+			],
+			[
+				"in_a",
+				"in_array"
+			],
+			[
+				"is_a",
+				"is_array"
+			],
+			[
+				"rul",
+				"rules"
+			],
+			[
+				"requ",
+				"required"
+			],
+			[
+				"emp",
+				"empty"
+			],
+			[
+				"by_",
+				"by_groups"
+			],
+			[
+				"preo",
+				"project_id"
+			],
+			[
+				"load",
+				"load_library\tCI - Load Library"
+			],
+			[
+				"load_li",
+				"load_library\tCI - Load Library"
+			],
+			[
+				"ta",
+				"table_info"
+			],
+			[
+				"multi",
+				"multi_menu"
+			],
+			[
+				"drop",
+				"dropdown"
+			],
+			[
+				"mu",
+				"multi_menu"
+			],
+			[
+				"empt",
+				"empty"
+			],
+			[
+				"pre",
+				"previos_meter"
+			],
+			[
+				"loca",
+				"location_id"
+			],
+			[
+				"debug",
+				"debug_backtrace"
+			],
+			[
+				"system_",
+				"system_message"
+			],
+			[
+				"er",
+				"errors"
+			],
+			[
+				"null",
+				"NULL"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/modules/admin/controllers/project.php",
+			"settings":
+			{
+				"buffer_size": 15362,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/admin/controllers/User.php",
+			"settings":
+			{
+				"buffer_size": 12345,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package control: install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Install Package Control"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/Home.php",
+		"/C/laragon/www/ucpw/application/modules/admin/models/project_model.php",
+		"/C/laragon/www/ucpw/application/config/autoload.php",
+		"/C/laragon/www/ucpw/application/config/ion_auth.php",
+		"/C/laragon/www/ucpw/application/modules/admin/models/user_model.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth/models/Ion_auth_model.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth_acl/models/ion_auth_acl_model.php",
+		"/C/laragon/www/ucpw/application/config/ucpw.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/project/form/build_form.php",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/vendor.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/demo.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/config.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/form-render.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/form-builder.js",
+		"/C/laragon/www/UCPW/application/libraries/Form_builder.php",
+		"/C/laragon/www/UCPW/application/core/MY_Controller.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/project/info.php",
+		"/C/laragon/usr/sites.conf",
+		"/C/laragon/www/UCPW/application/core/MY_Model.php",
+		"/C/laragon/www/UCPW/application/libraries/PFBuilder.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/project/info_ajax.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/project/form/form_data.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/_layouts/ajax.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/_layouts/default.php",
+		"/C/laragon/www/UCPW/application/libraries/System_message.php",
+		"/C/laragon/www/UCPW/system/libraries/Form_validation.php",
+		"/C/laragon/www/UCPW/system/helpers/form_helper.php",
+		"/C/laragon/www/UCPW/application/core/Base_Model.php",
+		"/C/laragon/www/UCPW/application/helpers/menu_helper.php",
+		"/C/laragon/www/UCPW/application/controllers/Home.php",
+		"/C/laragon/www/UCPW/application/composer.json",
+		"/C/laragon/www/UCPW/application/views/_base/head.php",
+		"/C/laragon/www/UCPW/application/views/_partials/navbar.php",
+		"/C/laragon/www/UCPW/application/views/_partials/footer.php",
+		"/C/laragon/www/UCPW/application/views/_layouts/iframe.php",
+		"/C/laragon/www/UCPW/application/views/_layouts/default.php",
+		"/C/laragon/www/UCPW/application/views/home.php",
+		"/C/laragon/www/UCPW/application/views/_partials/all.php",
+		"/C/laragon/www/UCPW/application/config/config.php",
+		"/C/laragon/www/UCPW/application/config/constants.php",
+		"/C/laragon/www/UCPW/application/config/routes.php",
+		"/C/laragon/www/UCPW/application/core/controllers/Admin_Controller.php",
+		"/C/laragon/www/UCPW/application/third_party/MX/Router.php",
+		"/C/laragon/www/UCPW/system/core/Router.php",
+		"/C/laragon/www/UCPW/application/controllers/Errors.php",
+		"/C/laragon/www/UCPW/index.php",
+		"/C/laragon/www/UCPW/application/third_party/MX/Lang.php",
+		"/C/laragon/www/UCPW/application/core/MY_Lang.php",
+		"/C/laragon/www/UCPW/application/core/MY_Router.php",
+		"/C/laragon/www/UCPW/application/config/ucpw.php",
+		"/C/laragon/www/UCPW/application/core/controllers/Api_Controller.php",
+		"/C/laragon/www/UCPW/application/modules/admin/config/ci_bootstrap.php",
+		"/C/laragon/usr/laragon.ini",
+		"/C/laragon/bin/php/php-7.2.11-Win32-VC15-x64/php.ini",
+		"/C/laragon/www/UCPW/application/libraries/Multi_menu.php",
+		"/C/laragon/www/UCPW/application/config/ci_bootstrap.php",
+		"/C/laragon/www/UCPW/assets/dist/favicon/manifest.json",
+		"/C/laragon/www/UCPW/application/views/_base/foot.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/project/form/form_submit.php",
+		"/C/laragon/www/UCPW/application/config/database.php",
+		"/C/laragon/www/UCPW/application/config/production/database.php",
+		"/C/laragon/www/UCPW/application/helpers/MY_url_helper.php",
+		"/C/laragon/www/UCPW/application/modules/admin/views/_base/foot.php",
+		"/C/laragon/www/UCPW/.htaccess",
+		"/C/laragon/www/UCPW/system/helpers/url_helper.php",
+		"/C/laragon/www/UCPW/system/core/Config.php",
+		"/C/laragon/www/UCPW/application/config/migration.php",
+		"/C/WebServers/home/localhost/www/master/system/database/DB_query_builder.php",
+		"/C/WebServers/home/localhost/www/master/application/helpers/MY_url_helper.php",
+		"/C/WebServers/home/localhost/www/master/application/core/MY_Controller.php",
+		"/C/WebServers/home/localhost/www/master/system/helpers/form_helper.php",
+		"/C/WebServers/home/localhost/www/master/system/libraries/Form_validation.php",
+		"/C/WebServers/home/localhost/www/master/system/core/Common.php",
+		"/C/WebServers/home/localhost/www/master/system/core/Log.php",
+		"/C/WebServers/home/localhost/www/master/system/libraries/Session/Session.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/config/form_validation.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/form/details.php",
+		"/C/WebServers/home/localhost/www/master/application/libraries/Form_builder.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/home.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/form_data.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/update_project.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/add_project.php",
+		"/C/WebServers/home/localhost/www/master/application/helpers/menu_helper.php",
+		"/C/WebServers/home/localhost/www/master/application/libraries/System_message.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/info.php",
+		"/C/WebServers/home/localhost/www/master/application/third_party/grocery_crud/libraries/Grocery_CRUD.php",
+		"/C/WebServers/home/localhost/www/master/application/core/Base_Model.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/home.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/config/ci_bootstrap.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/document/home.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/documents/home.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/form/home.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/form/fill.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/forms.php",
+		"/C/WebServers/home/localhost/www/master/application/third_party/ion_auth/libraries/Ion_auth.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/user_model.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/Water.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/water_model.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/User.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/Panel.php",
+		"/C/WebServers/home/localhost/www/master/application/third_party/ion_auth/models/Ion_auth_model.php",
+		"/C/WebServers/home/localhost/www/master/application/config/ion_auth.php",
+		"/C/WebServers/home/localhost/www/master/sql/core/ion_auth.sql",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/language/english/water_lang.php",
+		"/C/WebServers/home/localhost/www/master/application/views/iframe.php",
+		"/C/WebServers/home/localhost/www/master/application/vendor/league/csv/src/AbstractCsv.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_partials/navbar.php",
+		"/C/WebServers/home/localhost/www/master/application/controllers/Home.php",
+		"/C/WebServers/home/localhost/www/master/application/controllers/iframe.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/water/home.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/project_model.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_base/head.php",
+		"/C/WebServers/home/localhost/www/master/application/config/config.php",
+		"/C/WebServers/home/localhost/www/master/index.php",
+		"/C/WebServers/home/localhost/www/master/system/core/CodeIgniter.php",
+		"/C/WebServers/home/localhost/www/master/system/core/Output.php",
+		"/C/WebServers/home/localhost/www/master/system/core/Controller.php",
+		"/C/WebServers/home/localhost/www/master/application/config/routes.php",
+		"/C/WebServers/home/localhost/www/master/system/helpers/url_helper.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/Iframe.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/iframe_model.php",
+		"/C/WebServers/home/localhost/www/master/application/libraries/Multi_menu.php",
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/mainmenu_model.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_layouts/iframe.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_partials/all.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_partials/footer.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_layouts/default.php",
+		"/C/WebServers/home/localhost/www/master/application/views/_layouts/full_width.php"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"redirect",
+			"render",
+			"templates",
+			"starRating",
+			"typeUserAttrs",
+			"inputSets",
+			"replaceFields",
+			"add_script",
+			"$this->mScripts",
+			"1-50",
+			"ajax",
+			"$completed_form",
+			"completed_form",
+			"debug($data);",
+			");\n",
+			"group",
+			"order",
+			"structure",
+			"strucutre",
+			"count(",
+			"matches",
+			"$this->routes",
+			"_set_request",
+			"404",
+			"layout",
+			"404",
+			");\n",
+			"class",
+			"$this->mAction",
+			"rewrite",
+			"404_override",
+			"page_missing",
+			"page_title",
+			"mobile",
+			"multi_menu",
+			"multi",
+			"$CI->config->site_url",
+			"mConfig",
+			"mBaseUrl",
+			"mMultilingual",
+			"BASE_URL",
+			"mLanguage",
+			"en",
+			"get_completed_form",
+			"get_form_data",
+			"pfbuilder",
+			"get_completed_form",
+			"completed_form",
+			"get_completed_form",
+			"field_type",
+			">\n",
+			"get_field_value",
+			"view_field_value",
+			"get_form_field_value",
+			"get_structure_by_proj",
+			"form_comp_id",
+			"save",
+			"set_checkbox",
+			"mFormData",
+			"form",
+			"messa",
+			"rule",
+			"rulegroup",
+			"validate",
+			"set_rules",
+			"mFormUrl",
+			"rule",
+			"mRuleGroup",
+			"mSessionKey",
+			"_config_rules",
+			"get_field_value",
+			"mFormData",
+			"mSessionKey",
+			"mFormCount",
+			"set_id",
+			"mFormData",
+			"mRuleGroup",
+			"data",
+			"form",
+			"field_checkbox",
+			"radio",
+			"checkbox",
+			" $",
+			"checkbox",
+			"type",
+			"type_id",
+			"checkbox",
+			"textarea",
+			">\n",
+			"div",
+			"<div class=\"form-group\">\n                  \t\t\t\t\t\t\t\t<label><?php echo $item->str_field_name; ?></label>\n                  \t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control <?php echo $item->str_field_class; ?>\" placeholder=\"<?php echo $item->str_field_placeholder; ?>\" value=\"<?php echo $item->str_field_value; ?>\">\n                \t\t\t\t\t\t\t</div>",
+			"get_form_group",
+			"separate_groups",
+			"by_groups",
+			"set_project",
+			"groups",
+			"get_form_subgroup",
+			"get_form_group",
+			"separate_groups",
+			"by_groups",
+			"echo",
+			"debug",
+			"field_id",
+			"by",
+			"group",
+			"$config['modules_locations'] = array(",
+			"hidde",
+			"users()",
+			"user",
+			">\n",
+			"Water",
+			"$OUT",
+			"OUT",
+			"baseurl",
+			"url",
+			"site_url",
+			"debug($iframe_items,1);",
+			"as_array()",
+			"$items",
+			"render",
+			"mUser",
+			"user",
+			"id",
+			");\n",
+			"add",
+			"\t\t\t\t",
+			"();\n",
+			"b_dropdown"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"mycount(",
+			"../assets/dist/images/",
+			"../images/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/modules/admin/controllers/project.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								616,
+								616
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/modules/admin/controllers/User.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4069,
+								4085
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "UCPW.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
