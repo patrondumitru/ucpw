@@ -55,10 +55,22 @@ if ( ! function_exists('get_next_key_array'))
 
 if ( ! function_exists('mycount'))
 {
-    function mycount($var)
+    
+
+    if (version_compare(phpversion(), '7.0.0', '<')) {
+    // php version isn't high enough
+        function mycount($var)
+        {            
+            return count($var);
+        }
+
+    }
+    else {
+        function mycount($var)
     {
         $counter = new myCounter;
         return count($counter);
+    }
     }
 }
 
@@ -68,3 +80,4 @@ class myCounter implements Countable {
         return ++$this->count;
     }
 }
+

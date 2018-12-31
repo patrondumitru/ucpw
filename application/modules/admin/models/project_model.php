@@ -41,7 +41,7 @@ class Project_model extends MY_Model {
 		$this->primary_key = 'status_id';
 		$this->_table = 'project_status';
 		$result = $this->get_all();
-		if (mycount($result) < 1) return null; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			foreach ($result as $item){
 				$result_array[$item->status_id]= $item->status_name;
@@ -87,7 +87,7 @@ class Project_model extends MY_Model {
 		$this->_table = 'project_form';
 
 		$result = $this->order_by('order_position')->get_many_by('status','1');
-		if (mycount($result) < 0) return null; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;
 		}
@@ -101,7 +101,7 @@ class Project_model extends MY_Model {
 		$this->_table = 'project_form';
 
 		$result = $this->get($form_id);
-		if (mycount($result) < 0) return null; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;
 		}
@@ -115,7 +115,7 @@ class Project_model extends MY_Model {
 		$this->_table = 'project_form_comp';
 
 		$result = $this->count_by(array('form_id'=>$form_id, 'project_id'=>$project_id));
-		if (mycount($result) < 0) return 0; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;
 		}
@@ -131,12 +131,11 @@ class Project_model extends MY_Model {
 		if (is_null($project_id)) $get_by = array('form_id'=>$form_id);
 			else $get_by = array('form_id'=>$form_id, 'project_id'=>$project_id);
 		$result = $this->get_many_by($get_by);
-		if (mycount($result) < 0) return 0; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;
 		}
 
-		return false;
 	}
 
 	public function get_completed_form_info($form_comp_id) //get_completed_form_info($form_id,$id_project);
@@ -145,7 +144,7 @@ class Project_model extends MY_Model {
 		$this->_table = 'project_form_comp';
 		
 		$result = $this->get($form_comp_id);		
-		if (mycount($result) < 0) return 0; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;
 		}
@@ -160,7 +159,8 @@ class Project_model extends MY_Model {
 		$this->_table = 'project_form';
 
 		$result = $this->get_by('form_id', $form_id);
-		if (mycount($result) < 0) return 0; 
+
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			$table_info = json_decode($result->table_info);
 			return $table_info;
@@ -177,7 +177,7 @@ class Project_model extends MY_Model {
 		if ($order) $this->db->order_by('str_field_group_order')->order_by('str_field_subgroup_order')->order_by('str_field_order');
 		
 		$result = $this->get_many_by('form_id', $form_id);
-		if (mycount($result) < 0) return 0; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{			
 			return $result;
 		}
@@ -208,7 +208,7 @@ class Project_model extends MY_Model {
 			$result = $this->get_by('fl_id',$value);
 		}
 
-		if (mycount($result) < 0) return 0; 
+		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{			
 			return $result->fl_value;
 		}
@@ -270,13 +270,18 @@ class Project_model extends MY_Model {
 		$join = array('project_form_structure'=>'project_data.structure_id = project_form_structure.structure_id');
 		if ($all_data) $data_field = '*';
 		else $data_field = array('project_data.id','project_form_structure.structure_id','project_form_structure.str_type','project_data.value','project_form_structure.str_field_name');
-		$where = null;		
-		foreach($completed_form as $item){
-			$in = array('project_data.form_comp_id'=>$item->form_comp_id,'project_form_structure.str_field_name'=>$rows);
-			$result[$item->form_comp_id] = $this->get_join($table,$data_field,$join,$where, $in);
-		}		
-		
-		return $result;
+		$where = null;	
+		if (count($completed_form) >= 1){	
+			//debug($completed_form,1);
+			foreach($completed_form as $item){
+				$in = array('project_data.form_comp_id'=>$item->form_comp_id,'project_form_structure.str_field_name'=>$rows);
+				$result[$item->form_comp_id] = $this->get_join($table,$data_field,$join,$where, $in);
+			}				
+			return $result;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public function get_form_data($completed_id, $all_data = false)

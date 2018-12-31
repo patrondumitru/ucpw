@@ -24,9 +24,9 @@
 | -------------------------------------------------------------------------
 | Database table names.
 */
-$config['tables']['permissions']            = 'permissions';
-$config['tables']['group_permissions']      = 'groups_permissions';
-$config['tables']['users_permissions']      = 'users_permissions';
+$config['tables']['permissions']            = 'admin_permissions';
+$config['tables']['group_permissions']      = 'admin_groups_permissions';
+$config['tables']['users_permissions']      = 'admin_users_permissions';
 
 /*
  | Permissions table column and Users / Groups permissions table column's you want to join WITH.

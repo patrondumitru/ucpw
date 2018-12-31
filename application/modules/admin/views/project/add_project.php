@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="box-body"><div><h1>
                                     <?php if(isset($message)) print_r($message);?></h1></div>
 
-                                    <?php 	$this->user->engineers();
+                                    <?php 	
                                             echo $form->set_id('form-create_registration');
                                     		echo $form->open(); //echo form_open(current_url(), array('class' => 'form-horizontal', 'id' => 'form-create_user'));
                                             echo $form->b_text('project_tablerow_name', 'name');

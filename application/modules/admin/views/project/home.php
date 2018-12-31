@@ -32,13 +32,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         
                                         <tr>
                                             <td><?php echo htmlspecialchars($row->prj_name, ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_engineer), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_manager), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_inspector), ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($this->user->admin_name($row->prj_engineer), ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($this->user->admin_name($row->prj_manager), ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($this->user->admin_name($row->prj_inspector), ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td><?php echo htmlspecialchars($this->project->location($row->prj_location_id), ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td><?php echo htmlspecialchars($this->project->status($row->status_id), ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td><?php echo htmlspecialchars($row->prj_date_created, ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_created_user_id), ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($this->user->admin_name($row->prj_created_user_id), ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td width='15%'>
                                                 <div class="btn-group-horizontal">
                                                     <a href="project/info/<?php echo $row->prj_id;?>" ><button type="button" class="btn btn-primary btn-flat"><i class="fa fa-file-text"></i></button></a>
