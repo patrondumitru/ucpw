@@ -230,7 +230,7 @@ class MY_Controller extends MX_Controller {
 	// $group parameter can be name, ID, name array, ID array, or mixed array
 	// Reference: http://benedmunds.com/ion_auth/#in_group
 	protected function verify_auth($group = 'members', $redirect_url = NULL)
-	{
+	{		
 		if ( !$this->ion_auth->logged_in() || !$this->ion_auth->in_group($group) )
 		{
 			if ( $redirect_url==NULL )
@@ -238,6 +238,21 @@ class MY_Controller extends MX_Controller {
 			
 			redirect($redirect_url);
 		}
+	}
+
+	// Check permision to page
+	protected function check_page_access($group = array('webmaster', 'admin'), $redirect_url = NULL)
+	{ 
+		$page = $this->mModule.'_'.$this->mCtrler.'_'.$this->mAction;
+		
+		if(!$this->ion_auth_acl->has_permission($page))
+		{
+			//if not exist permision, should be created	create_permission
+			if(!$this->ion_auth_acl->permission_key($page))
+				$this->ion_auth_acl->create_permission(strtolower($page), ucwords(strtolower($this->mModule.' '.$this->mCtrler.' '.$this->mAction)));
+			$this->verify_auth($group, $redirect_url);
+		}
+		
 	}
 
 	// Add script files, either append or prepend to $this->mScripts array

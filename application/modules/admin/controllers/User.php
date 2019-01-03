@@ -146,7 +146,6 @@ class User extends Admin_Controller {
 	{
 		$this->mViewData['users_groups']           =   $this->ion_auth->get_users_groups()->result();
         $this->mViewData['users_permissions']      =   $this->ion_auth_acl->build_acl();
-
         $this->render('user/admin/dashboard');
 	}
 

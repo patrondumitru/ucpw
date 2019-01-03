@@ -89,7 +89,6 @@ $config['ucpw'] = array(
 			'icon'		=> 'fa fa-university',
 			'children'  => array(
 				'List'			=> 'project',
-				'Create'		=> 'project/add',
 				'Forms'			=> 'project/forms',	
 
 			)
@@ -121,6 +120,7 @@ $config['ucpw'] = array(
 				'Admin Users'			=> 'panel/admin_user',
 				'Create Admin User'		=> 'panel/admin_user_create',
 				'Admin User Groups'		=> 'panel/admin_user_group',
+				'Module Access'			=> 'panel/module_access',
 			)
 		),
 		'util' => array(
@@ -146,15 +146,17 @@ $config['ucpw'] = array(
 		'water'						=> array('webmaster', 'admin', 'manager'),
 		'water/insert'				=> array('webmaster', 'admin', 'manager'),
 		'water/filter'				=> array('webmaster', 'admin', 'manager'),
-		'iframe'						=> array('webmaster', 'admin', 'manager'),
+		'iframe'					=> array('webmaster', 'admin', 'manager'),
 		'iframe/insert'				=> array('webmaster', 'admin', 'manager'),
-		'panel'						=> array('webmaster'),
-		'panel/admin_user'			=> array('webmaster'),
-		'panel/admin_user_create'	=> array('webmaster'),
-		'panel/admin_user_group'	=> array('webmaster'),
-		'util'						=> array('webmaster'),
-		'util/list_db'				=> array('webmaster'),
-		'util/backup_db'			=> array('webmaster'),
+		'panel'						=> array('webmaster', 'admin'),
+		'panel/admin_user'			=> array('webmaster', 'admin'),
+		'panel/admin_user_create'	=> array('webmaster', 'admin'),
+		'panel/admin_user_group'	=> array('webmaster', 'admin'),
+		'panel/admin_access'		=> array('webmaster', 'admin'),
+		'panel/module_access'		=> array('webmaster'),
+		'util'						=> array('webmaster', 'admin'),
+		'util/list_db'				=> array('webmaster', 'admin'),
+		'util/backup_db'			=> array('webmaster', 'admin'),
 		'util/restore_db'			=> array('webmaster'),
 		'util/remove_db'			=> array('webmaster'),
 	),
@@ -162,7 +164,9 @@ $config['ucpw'] = array(
 	// AdminLTE settings
 	'adminlte' => array(
 		'body_class' => array(
-			'webmaster'	=> 'skin-green',
+			'webmaster'	=> 'skin-red',
+			'engineers'	=> 'skin-green',
+			'inspectors'	=> 'skin-green',			
 			'admin'		=> 'skin-purple',
 			'manager'	=> 'skin-black',
 			'staff'		=> 'skin-blue',
@@ -187,8 +191,8 @@ $config['ucpw'] = array(
 		),
 		array(
 			'auth'		=> array('webmaster', 'admin', 'manager', 'staff'),
-			'name'		=> 'Github Repo',
-			'url'		=> CI_BOOTSTRAP_REPO,
+			'name'		=> 'Docs',
+			'url'		=> '/doc/',
 			'target'	=> '_blank',
 			'color'		=> 'text-green'
 		),

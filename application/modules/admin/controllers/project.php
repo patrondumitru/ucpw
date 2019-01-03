@@ -24,10 +24,9 @@ public function index()
 	{
 		//$this->ion_auth->is_admin() ?
 		$this->verify_auth(array('webmaster', 'admin'));
-        	$this->mPageTitle =  lang('project_home_title_page');
-        	$result= $this->project->get_all();
-        	$this->mViewData['data'] = $result;
-        	$this->render('project/home');
+        $this->mPageTitle =  lang('project_home_title_page');        
+        $this->mViewData['data'] = $this->project->get_all();
+        $this->render('project/home');
         
 	}
 

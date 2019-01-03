@@ -5,6 +5,7 @@ class Home extends Admin_Controller {
 
 	public function index()
 	{
+		
 		$this->load->model('user_model', 'users');
 		$this->mViewData['count'] = array(
 			'users' => $this->users->count_all(),
