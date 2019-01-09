@@ -65,17 +65,34 @@ CREATE TABLE `admin_permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `perm_key` varchar(30) NOT NULL,
   `perm_name` varchar(100) NOT NULL,
+  `url_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permKey` (`perm_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (1, 'create_user', 'Create Users');
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (2, 'edit_user', 'Edit users');
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (3, 'delete_user', 'Delete users');
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (4, 'admin_panel_index', 'Admin Panel Dashboard');
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (5, 'admin_panel_admin_user_create', 'Admin Panel Admin_user_create');
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (6, 'admin_panel_admin_user_group', 'Admin Panel Admin_user_group');
-INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`) VALUES (7, 'admin_panel_admin_user', 'Admin Panel Admin_user');
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (1, 'create_user', 'Create Users', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (2, 'edit_user', 'Edit users', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (3, 'delete_user', 'Delete users', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (4, 'admin_panel_index', 'Admin Panel Dashboard', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (5, 'admin_panel_admin_user_create', 'Admin Panel Admin_user_create', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (6, 'admin_panel_admin_user_group', 'Admin Panel Admin_user_group', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (7, 'admin_panel_admin_user', 'Admin Panel Admin_user', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (8, 'admin_panel_module_access', 'Admin Panel Module_access', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (9, 'admin_project_index', 'Admin Project Index', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (10, 'admin_home_index', 'Admin Home Index', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (11, 'admin_panel_logout', 'Admin Panel Logout', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (12, 'admin_user_index', 'Admin User Index', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (13, 'admin_user_create', 'Admin User Create', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (14, 'admin_user_group', 'Admin User Group', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (15, 'admin_project_forms', 'Admin Project Forms', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (16, 'admin_project_info', 'Admin Project Info', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (17, 'admin_project_form_submit', 'Admin Project Form_submit', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (18, 'admin_project_exportprojectfor', 'Admin Project Exportprojectforms', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (19, 'admin_project_update', 'Admin Project Update', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (20, 'admin_water_index', 'Admin Water Index', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (21, 'admin_water_add_readings', 'Admin Water Add_readings', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (22, 'admin_util_list_db', 'Admin Util List_db', NULL);
+INSERT INTO `admin_permissions` (`id`, `perm_key`, `perm_name`, `url_name`) VALUES (23, 'admin_util_backup_db', 'Admin Util Backup_db', NULL);
 
 
 #
@@ -125,7 +142,7 @@ CREATE TABLE `admin_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES (1, '127.0.0.1', 'webmaster', '$2y$08$/X5gzWjesYi78GqeAv5tA.dVGBVP7C1e1PzqnYCVe5s1qhlDIPPES', NULL, NULL, NULL, NULL, NULL, NULL, 1451900190, 1546552856, 1, 'Webmaster', '');
+INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES (1, '127.0.0.1', 'webmaster', '$2y$08$/X5gzWjesYi78GqeAv5tA.dVGBVP7C1e1PzqnYCVe5s1qhlDIPPES', NULL, NULL, NULL, NULL, NULL, NULL, 1451900190, 1547040249, 1, 'Webmaster', '');
 INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES (2, '127.0.0.1', 'admin', '$2y$08$7Bkco6JXtC3Hu6g9ngLZDuHsFLvT7cyAxiz1FzxlX5vwccvRT7nKW', NULL, NULL, NULL, NULL, NULL, NULL, 1451900228, 1451903990, 1, 'Admin', '');
 INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES (3, '127.0.0.1', 'manager', '$2y$08$snzIJdFXvg/rSHe0SndIAuvZyjktkjUxBXkrrGdkPy1K6r5r/dMLa', NULL, NULL, NULL, NULL, NULL, NULL, 1451900430, NULL, 1, 'Manager', '');
 INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES (4, '127.0.0.1', 'staff', '$2y$08$NigAXjN23CRKllqe3KmjYuWXD5iSRPY812SijlhGeKfkrMKde9da6', NULL, NULL, NULL, NULL, NULL, NULL, 1451900439, NULL, 1, 'Staff', '');

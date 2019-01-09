@@ -16,13 +16,12 @@ class Panel extends Admin_Controller {
 		$this->load->library('form_builder');
 
 		//permissions access group from database
-        $this->check_page_access();
+		$this->check_page_access();
 
 	}
 
 	public function index()
 	{	
-		$this->verify_auth(array('webmaster', 'admin'));
 		$this->mViewData['users_groups']           =   $this->ion_auth->get_users_groups()->result();
         $this->mViewData['users_permissions']      =   $this->ion_auth_acl->build_acl();
         $this->render('panel/dashboard');

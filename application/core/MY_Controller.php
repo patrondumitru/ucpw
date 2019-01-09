@@ -243,16 +243,22 @@ class MY_Controller extends MX_Controller {
 	// Check permision to page
 	protected function check_page_access($group = array('webmaster', 'admin'), $redirect_url = NULL)
 	{ 
+		$this->verify_login($redirect_url);
 		$page = $this->mModule.'_'.$this->mCtrler.'_'.$this->mAction;
 		
 		if(!$this->ion_auth_acl->has_permission($page))
-		{
-			//if not exist permision, should be created	create_permission
-			if(!$this->ion_auth_acl->permission_key($page))
-				$this->ion_auth_acl->create_permission(strtolower($page), ucwords(strtolower($this->mModule.' '.$this->mCtrler.' '.$this->mAction)));
-			$this->verify_auth($group, $redirect_url);
-		}
-		
+		{	//if not exist permision, should be created	automaticaly and give access on access pages
+			if(!$this->ion_auth_acl->permission_key($page)) $this->ion_auth_acl->create_permission(strtolower($page), ucwords(strtolower($this->mModule.' '.$this->mCtrler.' '.$this->mAction)));
+			//to do redirect with message no access
+			if (!$this->ion_auth->in_group($group))
+			{	
+				$message = 'No access on page: '.base_url($this->uri->uri_string());
+				$this->system_message->set_error($message.'');
+				log_message('error', $message. ' for UserID:'.$this->ion_auth->user()->row()->id);
+				redirect_referrer();
+			}
+			else $this->verify_auth($group, $redirect_url);
+		}		
 	}
 
 	// Add script files, either append or prepend to $this->mScripts array

@@ -7,6 +7,8 @@ class User extends Admin_Controller {
 	{
 		parent::__construct();
 		$this->load->library('form_builder');
+        //permissions access group from database
+        $this->check_page_access();
 	}
 
 	// Frontend User CRUD

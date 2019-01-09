@@ -11,7 +11,9 @@ class Water extends Admin_Controller {
 		$this->load->model('water_model','water');
 		//$this->page_title->push(lang('menu_water'));
 		//$this->data['pagetitle'] = $this->page_title->show();
-
+		
+		//permissions access group from database
+		$this->check_page_access();
 	}
 
 	public function index()

@@ -18,12 +18,13 @@ class Project extends Admin_Controller {
 		//$this->page_title->push(lang('menu_water'));
 		//$this->data['pagetitle'] = $this->page_title->show();
 
+		//permissions access group from database
+		$this->check_page_access();
+
 	}
 
 public function index()
 	{
-		//$this->ion_auth->is_admin() ?
-		$this->verify_auth(array('webmaster', 'admin'));
         $this->mPageTitle =  lang('project_home_title_page');        
         $this->mViewData['data'] = $this->project->get_all();
         $this->render('project/home');
@@ -45,7 +46,6 @@ public function index()
 
 	public function add()
 	{		
-		$this->verify_auth(array('webmaster', 'admin'));
         	$this->mPageTitle = lang('project_add_title_page');
 			$this->load->library('form_builder');
 			$form = $this->form_builder->create_form(NULL,FALSE,array('class' => 'form-horizontal'));
@@ -100,7 +100,7 @@ public function index()
 
 	public function update($id_project=null)
 	{		
-		$this->verify_auth(array('webmaster', 'admin'));
+		//$this->verify_auth(array('webmaster', 'admin'));
         	if ($id_project===NULL) redirect($this->mModule.'/'.$this->mCtrler);
         	$project = $this->project->get($id_project);
         	
@@ -160,7 +160,7 @@ public function index()
 
 	public function info($id_project=null, $form_id=null) // general information about project
 	{
-		$this->verify_auth(array('webmaster', 'admin'));
+		//$this->verify_auth(array('webmaster', 'admin'));
 		
         	if (is_null($id_project))
         	{
@@ -200,7 +200,7 @@ public function index()
 	public function form_data($form_comp_id=null)
 	{
 		//$this->ion_auth->is_admin() ?
-		$this->verify_auth(array('webmaster', 'admin'));
+		//$this->verify_auth(array('webmaster', 'admin'));
         	if (is_null($form_comp_id))
         	{
         		redirect($this->mModule.'/'.$this->mCtrler);        		
@@ -231,7 +231,7 @@ public function index()
 	public function form_submit($project_id = null, $form_id = null)
 	{
 		//$this->ion_auth->is_admin() ?
-		$this->verify_auth(array('webmaster', 'admin'));
+		//$this->verify_auth(array('webmaster', 'admin'));
         	if (is_null($form_id) or is_null($project_id) )
         	{
         		if ($id_project===NULL) redirect($this->mModule.'/'.$this->mCtrler);        		
@@ -300,7 +300,7 @@ public function index()
 
 	public function form_builder()
 	{
-		$this->verify_auth(array('webmaster', 'admin'));
+		//$this->verify_auth(array('webmaster', 'admin'));
 		//$this->add_script($files, $append = TRUE, $position = 'foot');
 		//$this->add_stylesheet($files, $append = TRUE, $media = 'screen');
 
@@ -339,7 +339,7 @@ public function index()
 	
 	public function exportprojectforms($id_project = NULL, $form_id = NULL)
 	{
-		$this->verify_auth(array('webmaster', 'admin'));
+		//$this->verify_auth(array('webmaster', 'admin'));
         	if ($id_project===NULL) redirect($this->mModule.'/'.$this->mCtrler);
         	
         	$project = $this->project->get($id_project);

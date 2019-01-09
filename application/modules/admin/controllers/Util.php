@@ -19,6 +19,9 @@ class Util extends Admin_Controller {
 		$this->mPageTitle = 'Utilities';
 		$this->mViewData['backup_sql_files'] = $this->mBackupSqlFiles;
 		$this->mViewData['latest_sql_file'] = $this->mLatestSqlFile;
+
+		//permissions access group from database
+		$this->check_page_access();
 	}
 
 	// List out saved versions of database

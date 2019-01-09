@@ -22,8 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<?php $this->load->view('_partials/breadcrumb'); ?>
 		</section>
 		<section class="content">
-			<?php $this->load->view($inner_view); ?>
-			<?php $this->load->view('_partials/back_btn'); ?>
+			<?php 
+				echo $this->system_message->render();
+				$this->load->view($inner_view); 
+				$this->load->view('_partials/back_btn'); ?>
 		</section>
 	</div>
 		
