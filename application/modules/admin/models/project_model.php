@@ -65,12 +65,12 @@ class Project_model extends MY_Model {
 
 	}
 
-	public function active_location()
+	public function active_location($status = 1)
 	{
 		$this->primary_key = 'location_id';
 		$this->_table = 'project_location';
 
-		$result = $this->order_by('location_name')->get_many_by('status','1');
+		$result = $this->order_by('location_name')->get_many_by('status',$status);
 		if (mycount($result) < 1) return null; 
 		else{
 			foreach ($result as $item){
@@ -81,12 +81,26 @@ class Project_model extends MY_Model {
 
 	}
 
-	public function active_forms()
+	public function forms()
 	{
 		$this->primary_key = 'form_id';
 		$this->_table = 'project_form';
 
-		$result = $this->order_by('order_position')->get_many_by('status','1');
+		$result = $this->order_by('order_position')->get_all();
+		if (mycount($result) < 0 or is_null($result)) return false; 
+		else{
+			return $result;
+		}
+
+		return false;
+	}
+
+	public function active_forms($status = 1)
+	{
+		$this->primary_key = 'form_id';
+		$this->_table = 'project_form';
+
+		$result = $this->order_by('order_position')->get_many_by('status',$status);
 		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;
@@ -109,12 +123,12 @@ class Project_model extends MY_Model {
 		return false;
 	}
 
-	public function count_completed_form($form_id, $project_id)
+	public function count_completed_form($form_id, $project_id=null)
 	{
 		$this->primary_key = 'form_comp_id';
 		$this->_table = 'project_form_comp';
-
-		$result = $this->count_by(array('form_id'=>$form_id, 'project_id'=>$project_id));
+		if (is_null($project_id)) $result = $this->count_by(array('form_id'=>$form_id));
+		else $result = $this->count_by(array('form_id'=>$form_id, 'project_id'=>$project_id));
 		if (mycount($result) < 0 or is_null($result)) return false; 
 		else{
 			return $result;

@@ -20,29 +20,30 @@ class Project extends Admin_Controller {
 
 		//permissions access group from database
 		$this->check_page_access();
+		$this->push_breadcrumb(humanize($this->mCtrler),base_url($this->mModule.'/'.$this->mCtrler));//$this->mModule.$this->mCtrler
+		//$this->push_breadcrumb(humanize($this->mAction),base_url(str_replace($this->mAction.'/', '', uri_string())));//$this->mModule.$this->mCtrler
 
 	}
 
 public function index()
 	{
+
         $this->mPageTitle =  lang('project_home_title_page');        
         $this->mViewData['data'] = $this->project->get_all();
         $this->render('project/home');
         
 	}
 
-	public function dashboard($color, $label, $icon, $url = '#')
+	public function forms($action=null, $form_id=null)
 	{
-		$result = $this->project->get_all();
-		$data = array(
-			'color'		=> $color,
-			'number'	=> count($result),
-			'label'		=> $label,
-			'icon'		=> $icon,
-			'url'		=> $url,
-		);
-		$this->load->view('adminlte/widget/info_box', $data);
+		$this->mPageTitle =  lang('project_forms_title_page');
+		$this->mViewData['data'] = $this->project->forms();    
+        $this->render('project/form/home');
+        
 	}
+
+
+
 
 	public function add()
 	{		
@@ -72,7 +73,7 @@ public function index()
 					
 					if($result){
 						$messages = "New registration was added ".$result;
-						$this->system_message->set_success($messages);
+						$this->system_message->add_success($messages);
 						redirect($this->mModule.'/'.$this->mCtrler.'/info/'.$result);
 						//redirect($this->mModule.'/'.$this->mCtrler.'/'.$this->mAction); //redirect back to new registration
 					}else {
@@ -129,7 +130,7 @@ public function index()
 					
 					if($result){
 						$messages = "Project was updated".$result;
-						$this->system_message->set_success($messages);
+						$this->system_message->add_success($messages);
 						redirect($this->mModule.'/'.$this->mCtrler);
 					}else {
 						$error_messages = "Errors updating project. Problem with database";
@@ -298,29 +299,14 @@ public function index()
 	}
 
 
-	public function form_builder()
+	public function addform()
 	{
-		//$this->verify_auth(array('webmaster', 'admin'));
-		//$this->add_script($files, $append = TRUE, $position = 'foot');
-		//$this->add_stylesheet($files, $append = TRUE, $media = 'screen');
-
-		
-		//$this->add_script('assets/dist/plugins/form-builder/js/form-render.js',1, 'head');
-		//$this->add_script('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js',1, 'head');
-		
-		//$this->add_script('assets/dist/plugins/form-builder/js/form-builder.js',1, 'head');
-
+		$this->mPageTitle = lang('project_forms_title_addform');
+		$this->push_breadcrumb('Form',base_url(str_replace(__FUNCTION__, '', uri_string())).'forms');//humanize
 		$this->add_script('assets/dist/plugins/form-builder/js/vendor.js',1, 'foot');
 		$this->add_script('assets/dist/plugins/form-builder/js/form-builder.min.js',1, 'foot');
 		$this->add_script('assets/dist/plugins/form-builder/js/form-render.min.js',1, 'foot');
 		$this->add_script('assets/dist/plugins/form-builder/js/demo.js',1, 'foot');
-
-		
-		
-		
-
-
-
         $result= $this->project->get_all();
         $this->mViewData['data'] = $result;
         $this->render('project/form/build_form');
@@ -329,12 +315,7 @@ public function index()
 
 
 
-	public function forms($action=null, $prj_id=null)
-	{
-		$this->verify_auth(array('webmaster', 'admin'));       
-        $this->render('project/form/build_form');
-        
-	}
+	
 
 	
 	public function exportprojectforms($id_project = NULL, $form_id = NULL)
@@ -417,5 +398,19 @@ public function index()
 	        $writer->save('php://output'); // download file 
         
 	}
+
+	public function dashboard($color, $label, $icon, $url = '#')
+	{
+		$result = $this->project->get_all();
+		$data = array(
+			'color'		=> $color,
+			'number'	=> count($result),
+			'label'		=> $label,
+			'icon'		=> $icon,
+			'url'		=> $url,
+		);
+		$this->load->view('adminlte/widget/info_box', $data);
+	}
+
 
 }

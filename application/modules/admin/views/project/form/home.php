@@ -16,34 +16,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th><?php echo lang('project_tablerow_form_name');?></th>
-                                            <th><?php echo lang('project_tablerow_project_name');?></th>                                            
-                                            <th><?php echo lang('project_tablerow_form_status');?></th>
-                                            <th><?php echo lang('project_tablerow_form_publish');?></th>
+                                            <th><?php echo lang('project_tablerow_form_name');?></th>   
+                                            <th><?php echo lang('project_tablerow_form_submited');?></th>                                        
+                                            <th><?php echo lang('project_tablerow_form_status');?></th>                                            
                                             <th><?php echo lang('project_tablerow_added_at');?></th>
                                             <th><?php echo lang('project_tablerow_added_by');?></th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach($data as $row): ?>
-                                        
+                                    <?php 
+                                    $status = array('0'=>'Inactive', '1'=>'Active');
+                                    foreach($data as $row): ?>                                        
                                         <tr>
-                                            
-                                            <td><?php echo htmlspecialchars($row->prj_name, ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_engineer), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_manager), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_inspector), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->project->location($row->prj_location_id), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->project->status($row->status_id), ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($row->prj_date_created, ENT_QUOTES, 'UTF-8'); ?></td>
-                                            <td><?php echo htmlspecialchars($this->user->name($row->prj_created_user_id), ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><i class="fa <?php echo $row->form_icon.' text-'.$row->form_color ;?>"></i> <?php echo htmlspecialchars($row->form_name, ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo $this->project->count_completed_form($row->form_id);?></td>
+                                            <td><?php echo htmlspecialchars($status[$row->status], ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($row->date_created, ENT_QUOTES, 'UTF-8'); ?></td>
+                                            <td><?php echo htmlspecialchars($this->user->admin_name($row->user_created), ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td width='15%'>
-                                                <div class="btn-group-horizontal">
-                                                  <a href="project/update/<?php echo $row->prj_id;?>" ><button type="button" class="btn btn-info btn-flat">
-                                                    <i class="fa fa-edit"></i>
-                                                    </button></a>
-                                                  <button type="button" class="btn btn-danger btn-flat"><a href='#'><i class="fa fa-trash"></i></a></button>
+                                                <div class="btn-group-horizontal">                                                  
+                                                    <a href="project/form_info/<?php echo $row->form_id;?>" ><button type="button" class="btn btn-primary btn-flat"><i class="fa fa-file-text"></i></button></a>
+                                                    <a href="project/form_update/<?php echo $row->form_id;?>" ><button type="button" class="btn btn-info btn-flat"><i class="fa fa-edit"></i></button></a>
+                                                    <a href="project/form_delete/<?php echo $row->form_id;?>" ><button type="button" class="btn btn-danger btn-flat"><i class="fa fa-trash"></i></button></a>
                                                 </div>
                                             </td>
 

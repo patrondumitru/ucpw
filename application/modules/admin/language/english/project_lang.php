@@ -35,16 +35,18 @@ $lang['project_info_edit_button']			= 'Edit ptoject ';
 $lang['project_info_form_list']				= 'Forms';
 $lang['project_info_form_detail']			= 'Completed form detail';
 
+//forms
+$lang['project_forms_title_page']			= 'Form list';
+$lang['project_forms_title_addform']		= 'Create new form';
 $lang['project_form_data_title']			= 'Details form - ';
 $lang['project_form_data_title2']			= 'for the project';
 
 $lang['project_form_submit_title']			= 'Complete form - ';
 
-
 $lang['project_tablerow_form_name']			= 'Name';
-$lang['project_tablerow_project']			= 'Project';
+$lang['project_tablerow_projects_submited']	= 'Projects submited';
+$lang['project_tablerow_form_submited']		= 'Submited ';
 $lang['project_tablerow_form_status']       = 'Status';
-$lang['project_tablerow_form_publish']      = 'Published';
 
 $lang['error001'] = '' ;
 $lang['error002'] = '' ;
