@@ -6,7 +6,7 @@ jQuery(function($) {
   var actionButtons = [{
     id: 'smile',
     className: 'btn btn-success',
-    label: 'Create',
+    label: 'Create Form',
     type: 'button',
     events: {
       click: function() {
@@ -25,21 +25,59 @@ jQuery(function($) {
 
   var typeUserAttrs = {
     text: {
-      className: {
-        label: 'Class',
+      fieldClass: {
+        label: 'Field class',
         options: {
-          'red form-control': 'Red',
-          'green form-control': 'Green',
-          'black form-control': 'Black',
-          'blue form-control': 'Blue'
+          'input-sm': 'Small',
+          'input-md': 'Medium',
+          'input-lg': 'Large'
+        }        
+      }, 
+      groupClass: {
+        label: 'Filed alert color',
+        options: {
+          'default': 'Default',
+          'has-success': 'Success',
+          'has-warning': 'Warning',
+          'has-error': 'Danger'
+        }        
+      },      
+      groupGrid: {
+        label: 'Field grid type',
+        options: {
+          'col-xs': 'Phones',
+          'col-sm': 'Tablets',
+          'col-md': 'Desktops',
+          'col-lg': 'Large Desktops'
         },
-        style: 'border: 1px solid red'
+        description:'Use for different devices :xs (phones), sm (tablets), md (desktops), and lg (larger desktops)'        
+      },
+      groupGridSize: {
+        label: 'Field grid size',
+        options: {
+          '12': '12','11': '11','10': '10','9': '9','8': '8','7': '7','6': '6','5': '5','4': '4','3': '3','2': '2','1': '1'
+        }        
+      },
+      fieldRules: {
+        label: 'Field rule',
+        options: {
+          'alpha': 'Alphabetical characters',
+          'alpha_numeric': 'Alpha-numeric characters',
+          'numeric': 'Numeric characters',
+          'decimal': 'Decimal number',
+          'integer': 'Integer number',
+          'is_natural': 'Natural number: 0, 1, 2, 3, etc',
+          'is_natural_no_zero': 'Natural number, but not zero: 1, 2, 3, etc',
+          'valid_url': 'Contain a valid URL',
+          'valid_email': 'Valid email address',
+          'valid_ip': 'Accepts an optional parameter of ‘ipv4’ or ‘ipv6’ to specify an IP format'
+        }        
       }
     }
   };
 
   // test disabledAttrs
-  var disabledAttrs = ['placeholder'];
+  var disabledAttrs = ['type','name'];
 
   var fbOptions = {
     subtypes: {
@@ -53,9 +91,7 @@ jQuery(function($) {
       });
       window.sessionStorage.setItem('formData', JSON.stringify(formData));
     },
-    stickyControls: {
-      enable: true
-    },
+    stickyControls: {enable: true},
     sortableControls: true,
     fields: fields,
     templates: templates,
@@ -66,11 +102,9 @@ jQuery(function($) {
     actionButtons: actionButtons,
     disableFields: ['autocomplete'],
     replaceFields: replaceFields,
-    disabledFieldButtons: {
-      text: ['copy']
-    }
+    disabledFieldButtons: {},
     // controlPosition: 'left'
-    // disabledAttrs
+    disabledAttrs
   };
   var formData = window.sessionStorage.getItem('formData');
   var editing = true;

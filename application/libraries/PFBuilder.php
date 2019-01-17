@@ -348,7 +348,7 @@ DATABASE METHODS
 	{
 		$extra['class'] = 'form-control '.$data->str_field_class;
 		$extra['placeholder'] = $data->str_field_placeholder;
-		return '<div class="form-group'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name).$this->field_text($data->str_field_name, $data->str_field_value, $extra).'</div>';
+		return '<div class="'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name, 'class="control-label"').$this->field_text($data->str_field_name, $data->str_field_value, $extra).$this->pf_help($data).'</div>';
 
 	}
 
@@ -363,7 +363,7 @@ DATABASE METHODS
 	{
 		$extra['class'] = 'form-control '.$data->str_field_class;
 		$extra['placeholder'] = $data->str_field_placeholder;
-		return '<div class="form-group'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name).$this->field_textarea($data->str_field_name, $data->str_field_value, $extra).'</div>';
+		return '<div class="'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name, 'class="control-label"').$this->field_textarea($data->str_field_name, $data->str_field_value, $extra).$this->pf_help($data).'</div>';
 	}
 
 	public function field_dropdown($name, $options = array(), $selected = array(), $extra = array())
@@ -375,7 +375,7 @@ DATABASE METHODS
 	{
 		$extra['class'] = 'form-control '.$data->str_field_class;
 		if ($value===NULL) $value = (isset($this->mFormData[$data->str_field_name])) ? $this->get_field_value($data->str_field_name) : $data->str_field_value;
-		return '<div class="form-group'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name).$this->field_dropdown($data->str_field_name, $options, $value, $extra).'</div>';
+		return '<div class="'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name, 'class="control-label"').$this->field_dropdown($data->str_field_name, $options, $value, $extra).$this->pf_help($data).'</div>';
 	}
 
 
@@ -392,18 +392,18 @@ DATABASE METHODS
 		//debug($this->get_field_values($data->structure_id));
 		$extra['class'] = "".$data->str_field_class;
 
-		$output = '<div class="form-group'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name);		
+		$output = '<div class="'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name, 'class="control-label"');		
 		$default_value = explode(";", $data->str_field_value);
 		if (!empty($option)){
 			foreach($option as $key => $item){
 				
 				if(in_array($key, $default_value)) $checked = TRUE; else $checked = FALSE;
 				$output .= '<div class="checkbox">';			
-				if ($with_name) $output .= form_label($this->field_checkbox($data->str_field_name.'[]', $key, $checked, $data->str_field_name.$key, $extra).$item, $data->str_field_name.$key);
+				if ($with_name) $output .= form_label($this->field_checkbox($data->str_field_name.'[]', $key, $checked, $data->str_field_name.$key, $extra).$item, $data->str_field_name.$key, 'class="control-label"');
 	            $output .='</div>';            
 			}
 		}
-		$output .= '</div>'; 
+		$output .= $this->pf_help($data).'</div>'; 
 		return $output;
 	}
 
@@ -419,7 +419,7 @@ DATABASE METHODS
 		//debug($this->get_field_values($data->structure_id));
 		$extra['class'] = "".$data->str_field_class;
 
-		$output = '<div class="form-group'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name);		
+		$output = '<div class="'.$this->pf_size($data).'">'.form_label($data->str_field_label.$this->pf_required($data), $data->str_field_name, 'class="control-label"');		
 		$default_value = explode(";", $data->str_field_value);
 		if (!empty($option)){
 			foreach($option as $key => $item){
@@ -428,8 +428,8 @@ DATABASE METHODS
 
 
 				$output .= '<div class="radio">';			
-				if ($with_name) $output .= form_label($this->field_radiobox($data->str_field_name, $key, $checked, $data->str_field_name.$key, $extra).$item, $data->str_field_name.$key);
-	            $output .='</div>';            
+				if ($with_name) $output .= form_label($this->field_radiobox($data->str_field_name, $key, $checked, $data->str_field_name.$key, $extra).$item, $data->str_field_name.$key, 'class="control-label"');
+	            $output .= $this->pf_help($data).'</div>';            
 			}
 		}
 		$output .= '</div>'; 
@@ -447,7 +447,7 @@ DATABASE METHODS
 	{	
 		$extra['class'] = $data->str_field_class;
 		$extra['placeholder'] = $data->str_field_placeholder;		
-		return '<div class="form-group'.$this->pf_size($data).'">'.form_label($data->str_field_label, $data->str_field_name).$this->pf_required($data).$this->field_file($data->str_field_name, $data->str_field_value, $extra).'</div>';
+		return '<div class="'.$this->pf_size($data).'">'.form_label($data->str_field_label, $data->str_field_name, 'class="control-label"').$this->pf_required($data).$this->field_file($data->str_field_name, $data->str_field_value, $extra).$this->pf_help($data).'</div>';
 	}
 
 	public function field_hidden($name, $value = NULL, $extra = array())
@@ -588,16 +588,18 @@ DATABASE METHODS
 
 	private function pf_size($data)
 	{
-		$size = '';
-		if (!empty($data->str_field_subgroup_size)) $size = ' col-xs-'.$data->str_field_subgroup_size; 
+		$size = 'col-md-12';
+		if (!empty($data->str_field_subgroup_grid)) $size = $data->str_field_subgroup_grid.'-'.$data->str_field_subgroup_size; 		
+		if (!empty($data->str_field_subgroup_class)) $size .=' '.$data->str_field_subgroup_class; 
 		return $size;
 	}
-
+	private function pf_help($data) 
+	{
+		$help = '';
+		if (!empty($data->str_field_helpblock)) $help ='<p class="help-block">'.$data->str_field_helpblock.'</p>'; 		
+		return $help;
+	}
 /*
-
-
-
-
 			[structure_id] => 2
             [form_id] => 1
             [type_id] => 1
@@ -613,5 +615,16 @@ DATABASE METHODS
             [str_field_subgroup_size] => 200
             [str_field_required] => 1
             [str_field_class] => temperature-name
+
+			[str_field_subgroup_class] => 200
+            data->str_field_layer_size = xs (phones), sm (tablets), md (desktops), and lg (larger desktops). 
 */
 }//end class
+/*
+<div class="col-lg-3 has-success ">
+	<label for="temp_low" class="control-label">Temperature (low)<span class="text-red"> * </span></label>
+	<select name="temp_low" class="form-control input-lg"><option value="9">20</option><option value="10">21</option></select>
+	<p class="help-block">test</p>
+</div>
+
+*/
