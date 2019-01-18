@@ -313,7 +313,16 @@ public function index()
         
 	}
 
-
+	public function saveform()
+	{
+		$data = file_get_contents('php://input');
+		
+		$datajson = json_decode($data);
+		//debug($data,1);
+		//echo "Test";
+		
+		$this->render_json($data);
+	}
 
 	
 

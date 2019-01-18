@@ -10,14 +10,25 @@ jQuery(function($) {
     type: 'button',
     events: {
       click: function() {
-        alert('😁😁😁 !SMILE! 😁😁😁');
+        //var formdata = formBuilder.actions.getData('json', true);
+        $.ajax({
+            type: "POST",
+            url: "http://ucpw.test/admin/project/saveform/",
+            // The key needs to match your method's input parameter (case-sensitive).
+            data: formBuilder.actions.getData('json'),//JSON.stringify({ data: formdata }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data){alert(data);},
+            failure: function(errMsg) {alert(errMsg);}
+        });
+        //alert('😁😁😁 !SMILE! 😁😁😁');
       }
     }
   }];
 
   var templates = {};
 
-  var inputSets = [];
+  var inputSets = []; //create group of fields
 
   var typeUserDisabledAttrs = {
     autocomplete: ['access']
@@ -92,7 +103,7 @@ jQuery(function($) {
       window.sessionStorage.setItem('formData', JSON.stringify(formData));
     },
     stickyControls: {enable: true},
-    sortableControls: true,
+    sortableControls: false,
     fields: fields,
     templates: templates,
     inputSets: inputSets,
@@ -100,10 +111,11 @@ jQuery(function($) {
     typeUserAttrs: typeUserAttrs,
     disableInjectedStyle: false,
     actionButtons: actionButtons,
-    disableFields: ['autocomplete'],
+    disableFields: ['autocomplete','paragraph'],
     replaceFields: replaceFields,
+    //fieldRemoveWarn: true, // defaults to false 
     disabledFieldButtons: {},
-    // controlPosition: 'left'
+    //controlPosition: 'right',
     disabledAttrs
   };
   var formData = window.sessionStorage.getItem('formData');
