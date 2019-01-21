@@ -318,10 +318,139 @@ public function index()
 		$data = file_get_contents('php://input');
 		
 		$datajson = json_decode($data);
+
 		//debug($data,1);
+		debug($datajson,1);
 		//echo "Test";
-		
+		foreach ($datajson as $field)
+		{
+			switch ($field->str_type){
+				case 1: return $this->pf_text($data); break;
+				case 2: return $this->pf_textarea($data); break;
+				case 3: return $this->pf_checkbox($data, $this->get_field_values($data->structure_id)); break;
+				case 4: return $this->pf_radiobox($data, $this->get_field_values($data->structure_id)); break;
+				case 5: return $this->pf_dropdown($data, $this->get_field_values($data->structure_id)); break;
+				case 6: return $this->pf_file($data); break;				
+			default: return false;	break;
+
+		}
 		$this->render_json($data);
+		/*
+--------------------------------------------------
+			[type] => text
+            [label] => Text Field
+            [className] => form-control
+            [subtype] => text
+
+            [fieldClass] => input-sm
+            [groupClass] => default
+            [groupGrid] => col-xs
+            [groupGridSize] => 1
+            [fieldRules] => alpha
+
+--------------------------------------------------
+            [type] => checkbox-group
+            [label] => Checkbox Group
+            [values] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [label] => Option 1
+                            [value] => option-1
+                            [selected] => 1
+                        )
+
+                )
+
+--------------------------------------------------
+        	[type] => date
+            [label] => Date Field
+            [className] => form-control
+
+--------------------------------------------------
+
+            [type] => radio-group
+            [label] => Radio Group
+            [values] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [label] => Option 1
+                            [value] => option-1
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [label] => Option 2
+                            [value] => option-2
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [label] => Option 3
+                            [value] => option-3
+                        )
+
+                )
+
+--------------------------------------------------
+			[type] => select
+            [label] => Select
+            [className] => form-control
+            [values] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [label] => Option 1
+                            [value] => option-1
+                            [selected] => 1
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [label] => Option 2
+                            [value] => option-2
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [label] => Option 3
+                            [value] => option-3
+                        )
+
+                )
+--------------------------------------------------
+            [type] => textarea
+            [label] => Text Area
+            [className] => form-control
+            [subtype] => textarea
+
+--------------------------------------------------
+[type] => radio-group
+            [label] => Radio Group
+            [values] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [label] => Option 1
+                            [value] => option-1
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [label] => Option 2
+                            [value] => option-2
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [label] => Option 3
+                            [value] => option-3
+                        )
+
+                )
+
+            */
 	}
 
 	
