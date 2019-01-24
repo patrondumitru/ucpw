@@ -320,137 +320,18 @@ public function index()
 		$datajson = json_decode($data);
 
 		//debug($data,1);
-		debug($datajson,1);
+		
 		//echo "Test";
-		foreach ($datajson as $field)
+		$form_id = 1;
+		foreach ($datajson as $key => $field)
 		{
-			switch ($field->str_type){
-				case 1: return $this->pf_text($data); break;
-				case 2: return $this->pf_textarea($data); break;
-				case 3: return $this->pf_checkbox($data, $this->get_field_values($data->structure_id)); break;
-				case 4: return $this->pf_radiobox($data, $this->get_field_values($data->structure_id)); break;
-				case 5: return $this->pf_dropdown($data, $this->get_field_values($data->structure_id)); break;
-				case 6: return $this->pf_file($data); break;				
-			default: return false;	break;
-
+			$fields[$key+1] = $this->checkformfild($field, $form_id, $key+1);				
 		}
+
+		debug($fields);
+		debug($datajson,1);
 		$this->render_json($data);
-		/*
---------------------------------------------------
-			[type] => text
-            [label] => Text Field
-            [className] => form-control
-            [subtype] => text
-
-            [fieldClass] => input-sm
-            [groupClass] => default
-            [groupGrid] => col-xs
-            [groupGridSize] => 1
-            [fieldRules] => alpha
-
---------------------------------------------------
-            [type] => checkbox-group
-            [label] => Checkbox Group
-            [values] => Array
-                (
-                    [0] => stdClass Object
-                        (
-                            [label] => Option 1
-                            [value] => option-1
-                            [selected] => 1
-                        )
-
-                )
-
---------------------------------------------------
-        	[type] => date
-            [label] => Date Field
-            [className] => form-control
-
---------------------------------------------------
-
-            [type] => radio-group
-            [label] => Radio Group
-            [values] => Array
-                (
-                    [0] => stdClass Object
-                        (
-                            [label] => Option 1
-                            [value] => option-1
-                        )
-
-                    [1] => stdClass Object
-                        (
-                            [label] => Option 2
-                            [value] => option-2
-                        )
-
-                    [2] => stdClass Object
-                        (
-                            [label] => Option 3
-                            [value] => option-3
-                        )
-
-                )
-
---------------------------------------------------
-			[type] => select
-            [label] => Select
-            [className] => form-control
-            [values] => Array
-                (
-                    [0] => stdClass Object
-                        (
-                            [label] => Option 1
-                            [value] => option-1
-                            [selected] => 1
-                        )
-
-                    [1] => stdClass Object
-                        (
-                            [label] => Option 2
-                            [value] => option-2
-                        )
-
-                    [2] => stdClass Object
-                        (
-                            [label] => Option 3
-                            [value] => option-3
-                        )
-
-                )
---------------------------------------------------
-            [type] => textarea
-            [label] => Text Area
-            [className] => form-control
-            [subtype] => textarea
-
---------------------------------------------------
-[type] => radio-group
-            [label] => Radio Group
-            [values] => Array
-                (
-                    [0] => stdClass Object
-                        (
-                            [label] => Option 1
-                            [value] => option-1
-                        )
-
-                    [1] => stdClass Object
-                        (
-                            [label] => Option 2
-                            [value] => option-2
-                        )
-
-                    [2] => stdClass Object
-                        (
-                            [label] => Option 3
-                            [value] => option-3
-                        )
-
-                )
-
-            */
+		
 	}
 
 	
@@ -550,5 +431,35 @@ public function index()
 		$this->load->view('adminlte/widget/info_box', $data);
 	}
 
+
+	//-----------------Add forms -----------------------------//
+	private function checkformfild($data, $form_id, $order)
+	{
+		$str_type = array('text'=>'1','textarea'=>'2','checkbox'=>'9','radio-group'=>'4','select'=>'5','file'=>'6','autocomplete'=>'7','button'=>'8','checkbox-group'=>'3','date'=>'10','header'=>'11','hidden'=>'12','number'=>'13','paragraph'=>'14');
+		$result['form_id'] = $form_id;
+		$result['str_field_order'] = $order;
+		if (isset($data->type)) $result['str_type'] = $str_type[$data->type];
+		if (isset($data->name)) $result['str_field_name'] = $data->name;
+		if (isset($data->required)) $result['str_field_required'] = 1; else $result['str_field_required'] = 0;
+		if (isset($data->label)) $result['str_field_label'] = $data->label;
+		if (isset($data->description)) $result['str_field_helpblock'] = $data->description;
+		if (isset($data->placeholder)) $result['str_field_placeholder'] = $data->placeholder;
+		//if (isset($data->className)) $result['required'] = 1;
+		if (isset($data->value)) $result['str_field_value'] = $data->value;
+		if (isset($data->fieldClass)) $result['str_field_class'] = $data->fieldClass;			
+		if (isset($data->groupGrid)) $result['str_field_subgroup_grid'] = $data->groupGrid;
+		if (isset($data->groupClass)) $result['str_field_subgroup_class'] = $data->groupClass;
+		if (isset($data->groupGridSize)) $result['str_field_subgroup_size'] = $data->groupGridSize;
+		if (isset($data->maxlength)) $max_length = 'max_length['.$data->maxlength.']'; else $max_length = '';
+		if (isset($data->fieldRules)) $result['str_field_rule'] = $data->fieldRules.'|'.$max_length ; else $result['str_field_rule'] = $max_length ;
+
+		if (isset($data->group)) $result['str_field_group'] = $data->group;
+		if (isset($data->groupOrder)) $result['str_field_group_order'] = $data->groupOrder;
+		if (isset($data->subgroup)) $result['str_field_subgroup'] = $data->subgroup;
+		if (isset($data->subgroupSize)) $result['str_field_subgroup_order'] = $data->subgroupSize;
+		
+		if (isset($data->values)) $result['str_field_value'] = $data->values;
+		return $result;
+	}
 
 }
