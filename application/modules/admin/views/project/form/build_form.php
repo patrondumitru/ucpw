@@ -8,8 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#page_0" data-toggle="tab">Basic</a></li> 
-              <button id="add-tab" class='btn btn-warning'>Add new page</button>                        
-              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+              <button id="add-tab" class='btn btn-warning'>Add new page</button>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="page_0">
@@ -68,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               			<!-- /.box-body -->
 		              <div class="box-footer">
 		                <button type="button" class="btn btn-default controlpage">Cancel</button>
-		                <button type="button" class="btn btn-info pull-right controlpage">Next</button>
+		                <button type="button" id="basicnext" class="btn btn-info pull-right controlpage">Next</button>
 
 		              </div>
               			<!-- /.box-footer -->
@@ -76,14 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <!-- /.tab-pane -->
               
-              <div class="tab-pane" id="tab_4">
-				<form class="render-wrap"></form>
-				<div class="box-footer">
-	                <button type="button" class="btn btn-default controlpage" >Back</button>
-	                <button type="submit" class="btn btn-info pull-right controlpage" pb-role="submit">Save</button>
-	              </div>
-              </div>
-              <!-- /.tab-pane -->
+              
             </div>
             <!-- /.tab-content -->
           </div>

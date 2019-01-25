@@ -2,25 +2,49 @@ $(document).ready(function() {
    // $("div .nav-tabs-custom").tabs();
 var page = 0;
 document.getElementById('add-tab').addEventListener('click', function() {
-      console.log('added new page');
-        var num_tabs = $("div .nav-tabs-custom ul li").length + 1;
+        //var num_tabs = $("div .nav-tabs-custom ul li").length + 1;
         page = page +1;
-        $("div .nav-tabs-custom ul").append(
-            "<li><a href='#page_" + page + "' data-toggle='tab'>Page " + page + " </a></li>"
-        );
+        $("div .nav-tabs-custom ul").append("<li><a href='#page_" + page + "' data-toggle='tab'>Page " + page + " </a></li>");
         $("div .tab-content").append(
-            "<div class='tab-pane' id='page_" + page + "'><div id='stage" + page + "' class='build-wrap'></div><div class='box-footer'><button type='button' class='btn btn-default controlpage'>Back</button><button type='button' class='btn btn-info pull-right controlpage'>Next</button></div></div>"
+            "<div class='tab-pane' id='page_" + page + "'><div id='stage" + page + "' class='build-wrap'></div><div class='box-footer'><button type='button' id='prev" + (page-1) + "' class='btn btn-default controlpage'>Back</button><button type='button' id='next" + page + "'class='btn btn-info pull-right controlpage'>Next</button></div></div>"
         );
 
         //var formBuilder = $('#stage'+page).formBuilder(fbOptions);
         var formBuilder = [];
         formBuilder[page] = $('#stage'+page).formBuilder(fbOptions);
+
+        if (!$("#next" + page).is(':last-child')){ 
+          $(this).html('Next');
+        }else {
+          $(this).html('Save');
+         }
+
+          document.getElementById("next" + page).addEventListener('click', function(pag) {                
+              if (!$("div .nav-tabs-custom ul li.active").is(':last-child')){
+              $("div .tab-pane.active").removeClass('active').next().addClass('active');
+              $("div .nav-tabs-custom ul li.active").removeClass('active').next().addClass('active');
+              }
+              else {
+                $(this).html('Save');
+              }
+
+          });
+          document.getElementById("prev" + (page-1)).addEventListener('click', function() {            
+            $("div .tab-pane.active").removeClass('active').prev().addClass('active');
+            $("div .nav-tabs-custom ul li.active").removeClass('active').prev().addClass('active'); 
+          });
     });
 
-    $("button.controlpage").click(function(data) {
+  document.getElementById('basicnext').addEventListener('click', function() {
+    var num_tabs = $("div .nav-tabs-custom ul li") ;    
+    if (num_tabs.length <= 2) alert('Add new page');
+    else{
+      $("div .tab-pane.active").removeClass('active').next().addClass('active');
+      $("div .nav-tabs-custom ul li.active").removeClass('active').next().addClass('active'); 
+    };
 
-      alert();
-    });              
+  });
+
 
 //});
 
