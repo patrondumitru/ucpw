@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"control",
+				"controlpage"
+			],
+			[
+				"pf",
+				"pfbuilder"
+			],
+			[
+				"fiel",
+				"field"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"pf_h",
+				"pf_help"
+			],
+			[
+				"io",
+				"ion_auth"
+			],
+			[
+				"ion_a",
+				"ion_auth"
+			],
+			[
+				"ver",
+				"verify_login"
+			],
+			[
+				"permi",
+				"permissions"
+			],
+			[
 				"var",
 				"var_dump"
 			],
@@ -120,21 +156,85 @@
 	"buffers":
 	[
 		{
-			"file": "application/modules/admin/controllers/project.php",
+			"file": "assets/dist/plugins/form-builder/js/demo.js",
 			"settings":
 			{
-				"buffer_size": 15362,
+				"buffer_size": 8600,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/admin/views/project/form/build_form.php",
+			"settings":
+			{
+				"buffer_size": 3598,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/modules/admin/controllers/User.php",
+			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/demos.css\">\n  <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.1/jquery.rateyo.min.css\">\n\n  <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1\">\n  <title>jQuery formBuilder/formRender Demo</title>\n</head>\n\n<body>\n  <div class=\"content\">\n    <h1>jQuery formBuilder</h1>\n    <div id=\"stage1\" class=\"build-wrap\"></div>\n    <div id=\"stage1\" class=\"build-wrap\"></div>\n    <form class=\"render-wrap\"></form>\n    <button id=\"edit-form\">Edit Form</button>\n\t\n    <div class=\"action-buttons\">\n      <h2>Actions</h2>\n      <button id=\"showData\" type=\"button\">Show Data</button>\n      <button id=\"clearFields\" type=\"button\">Clear All Fields</button>\n      <button id=\"getData\" type=\"button\">Get Data</button>\n      <button id=\"getXML\" type=\"button\">Get XML Data</button>\n      <button id=\"getJSON\" type=\"button\">Get JSON Data</button>\n      <button id=\"getJS\" type=\"button\">Get JS Data</button>\n      <button id=\"setData\" type=\"button\">Set Data</button>\n      <button id=\"addField\" type=\"button\">Add Field</button>\n      <button id=\"removeField\" type=\"button\">Remove Field</button>\n      <button id=\"testSubmit\" type=\"submit\">Test Submit</button>\n      <button id=\"resetDemo\" type=\"button\">Reset Demo</button>\n     \n     \n    </div>\n  </div>\n  <script src=\"js/vendor.js\"></script>\n  <script src=\"js/form-builder.min.js\"></script>\n  <script src=\"js/form-render.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.1/jquery.rateyo.min.js\"></script>\n  <script src=\"js/demo.js\"></script>\n</body>\n\n</html>\n",
+			"file": "assets/dist/plugins/form-builder/index.html",
+			"file_size": 1816,
+			"file_write_time": 131899012251710373,
 			"settings":
 			{
-				"buffer_size": 12345,
-				"encoding": "UTF-8",
+				"buffer_size": 1863,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/admin/views/project/info_ajax.php",
+			"settings":
+			{
+				"buffer_size": 5250,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/admin/controllers/project.php",
+			"settings":
+			{
+				"buffer_size": 17736,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/libraries/PFBuilder.php",
+			"settings":
+			{
+				"buffer_size": 18993,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/core/MY_Controller.php",
+			"settings":
+			{
+				"buffer_size": 14607,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/admin/models/project_model.php",
+			"settings":
+			{
+				"buffer_size": 9907,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/admin/views/project/form/home.php",
+			"settings":
+			{
+				"buffer_size": 3821,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -180,20 +280,79 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/laragon/www/ucpw",
+		"/C/laragon/www/ucpw/application",
+		"/C/laragon/www/ucpw/application/modules",
+		"/C/laragon/www/ucpw/application/modules/admin",
+		"/C/laragon/www/ucpw/application/modules/admin/views",
+		"/C/laragon/www/ucpw/application/modules/admin/views/project",
+		"/C/laragon/www/ucpw/application/modules/admin/views/project/form",
+		"/C/laragon/www/ucpw/assets",
+		"/C/laragon/www/ucpw/assets/dist",
+		"/C/laragon/www/ucpw/assets/dist/plugins",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/control"
+	],
 	"file_history":
 	[
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/config.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/control/custom.js",
+		"/C/laragon/www/ucpw/application/modules/admin/views/project/info.php",
+		"/C/laragon/www/ucpw/application/modules/admin/language/english/project_lang.php",
+		"/C/laragon/www/ucpw/system/helpers/form_helper.php",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/control/paragraph.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/controls.js",
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/Panel.php",
+		"/C/laragon/www/ucpw/application/libraries/System_message.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/_layouts/default.php",
+		"/C/laragon/www/ucpw/application/helpers/MY_url_helper.php",
+		"/C/laragon/www/ucpw/application/core/MY_Controller.php",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/data.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/control.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/utils.js",
+		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/README.md",
+		"/C/laragon/www/ucpw/application/modules/admin/views/project/home.php",
+		"/C/laragon/www/ucpw/application/libraries/PFBuilder.php",
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/Util.php",
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/Water.php",
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/User.php",
 		"/C/laragon/www/ucpw/application/modules/admin/controllers/Home.php",
-		"/C/laragon/www/ucpw/application/modules/admin/models/project_model.php",
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/Iframe.php",
+		"/C/laragon/www/ucpw/application/libraries/Flash.php",
 		"/C/laragon/www/ucpw/application/config/autoload.php",
-		"/C/laragon/www/ucpw/application/config/ion_auth.php",
-		"/C/laragon/www/ucpw/application/modules/admin/models/user_model.php",
 		"/C/laragon/www/ucpw/application/third_party/ion_auth/models/Ion_auth_model.php",
-		"/C/laragon/www/ucpw/application/third_party/ion_auth_acl/models/ion_auth_acl_model.php",
+		"/C/laragon/www/ucpw/application/config/flash.php",
+		"/C/laragon/www/ucpw/application/modules/admin/controllers/Errors.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth_acl/libraries/Ion_auth_acl.php",
+		"/C/laragon/www/ucpw/application/core/controllers/Admin_Controller.php",
+		"/C/laragon/www/ucpw/application/config/config.php",
+		"/C/laragon/www/ucpw/system/libraries/User_agent.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/water/add_readings.php",
+		"/C/laragon/www/ucpw/assets/image_crud/views/list.php",
+		"/C/laragon/www/ucpw/application/core/controllers/Api_Controller.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth/models/ion_auth_acl_model.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth/libraries/Ion_auth_acl.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth/libraries/Ion_auth.php",
+		"/C/laragon/www/ucpw/application/modules/admin/config/ucpw.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/panel/dashboard.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/panel/access.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/home.php",
+		"/C/laragon/www/ucpw/application/modules/admin/models/user_model.php",
+		"/C/laragon/www/ucpw/application/modules/admin/views/project/add_project.php",
+		"/C/laragon/www/ucpw/application/libraries/Form_builder.php",
+		"/C/laragon/www/ucpw/application/modules/admin/models/project_model.php",
+		"/C/laragon/www/ucpw/application/helpers/menu_helper.php",
 		"/C/laragon/www/ucpw/application/config/ucpw.php",
+		"/C/laragon/www/ucpw/application/config/ion_auth.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth_acl/config/ion_auth_acl.php",
+		"/C/laragon/www/ucpw/application/modules/admin/config/ion_auth.php",
+		"/C/laragon/www/ucpw/application/third_party/ion_auth_acl/models/ion_auth_acl_model.php",
 		"/C/laragon/www/ucpw/application/modules/admin/views/project/form/build_form.php",
 		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/vendor.js",
 		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/demo.js",
-		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/config.js",
 		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/form-render.js",
 		"/C/laragon/www/ucpw/assets/dist/plugins/form-builder/js/form-builder.js",
 		"/C/laragon/www/UCPW/application/libraries/Form_builder.php",
@@ -266,54 +425,11 @@
 		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/add_project.php",
 		"/C/WebServers/home/localhost/www/master/application/helpers/menu_helper.php",
 		"/C/WebServers/home/localhost/www/master/application/libraries/System_message.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/info.php",
-		"/C/WebServers/home/localhost/www/master/application/third_party/grocery_crud/libraries/Grocery_CRUD.php",
-		"/C/WebServers/home/localhost/www/master/application/core/Base_Model.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/home.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/config/ci_bootstrap.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/document/home.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/documents/home.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/form/home.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/form/fill.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/forms.php",
-		"/C/WebServers/home/localhost/www/master/application/third_party/ion_auth/libraries/Ion_auth.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/user_model.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/Water.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/water_model.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/User.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/Panel.php",
-		"/C/WebServers/home/localhost/www/master/application/third_party/ion_auth/models/Ion_auth_model.php",
-		"/C/WebServers/home/localhost/www/master/application/config/ion_auth.php",
-		"/C/WebServers/home/localhost/www/master/sql/core/ion_auth.sql",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/language/english/water_lang.php",
-		"/C/WebServers/home/localhost/www/master/application/views/iframe.php",
-		"/C/WebServers/home/localhost/www/master/application/vendor/league/csv/src/AbstractCsv.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_partials/navbar.php",
-		"/C/WebServers/home/localhost/www/master/application/controllers/Home.php",
-		"/C/WebServers/home/localhost/www/master/application/controllers/iframe.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/water/home.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/project_model.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_base/head.php",
-		"/C/WebServers/home/localhost/www/master/application/config/config.php",
-		"/C/WebServers/home/localhost/www/master/index.php",
-		"/C/WebServers/home/localhost/www/master/system/core/CodeIgniter.php",
-		"/C/WebServers/home/localhost/www/master/system/core/Output.php",
-		"/C/WebServers/home/localhost/www/master/system/core/Controller.php",
-		"/C/WebServers/home/localhost/www/master/application/config/routes.php",
-		"/C/WebServers/home/localhost/www/master/system/helpers/url_helper.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/controllers/Iframe.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/iframe_model.php",
-		"/C/WebServers/home/localhost/www/master/application/libraries/Multi_menu.php",
-		"/C/WebServers/home/localhost/www/master/application/modules/admin/models/mainmenu_model.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_layouts/iframe.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_partials/all.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_partials/footer.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_layouts/default.php",
-		"/C/WebServers/home/localhost/www/master/application/views/_layouts/full_width.php"
+		"/C/WebServers/home/localhost/www/master/application/modules/admin/views/project/info.php"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -327,6 +443,52 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"stage",
+			").",
+			"formBuilder",
+			"fbOptions",
+			"fb",
+			"fbPromise",
+			"setFormData",
+			"fbOptions",
+			"lay",
+			"layo",
+			"pfbuilder",
+			"addformtext",
+			"json_decode",
+			"render",
+			"hidden input",
+			"hidden",
+			"hidden input",
+			"hidden",
+			"hidden ",
+			"inputSets",
+			"fieldRemoveWarn",
+			"disabledAttrs",
+			"fbOptions",
+			"formBuilder(",
+			"str_field_class",
+			"str_field_subgroup_size",
+			"form-b",
+			"git",
+			"actionButtons",
+			";\n",
+			"mPageAuth",
+			"home",
+			"forms(",
+			"forms",
+			"system_message",
+			"error",
+			"messa",
+			"ion_auth",
+			"useful_links",
+			"mPageAuth",
+			"page_auth",
+			"user",
+			"data",
+			"279",
+			"users(",
+			"user",
 			"redirect",
 			"render",
 			"templates",
@@ -408,53 +570,7 @@
 			"form",
 			"field_checkbox",
 			"radio",
-			"checkbox",
-			" $",
-			"checkbox",
-			"type",
-			"type_id",
-			"checkbox",
-			"textarea",
-			">\n",
-			"div",
-			"<div class=\"form-group\">\n                  \t\t\t\t\t\t\t\t<label><?php echo $item->str_field_name; ?></label>\n                  \t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control <?php echo $item->str_field_class; ?>\" placeholder=\"<?php echo $item->str_field_placeholder; ?>\" value=\"<?php echo $item->str_field_value; ?>\">\n                \t\t\t\t\t\t\t</div>",
-			"get_form_group",
-			"separate_groups",
-			"by_groups",
-			"set_project",
-			"groups",
-			"get_form_subgroup",
-			"get_form_group",
-			"separate_groups",
-			"by_groups",
-			"echo",
-			"debug",
-			"field_id",
-			"by",
-			"group",
-			"$config['modules_locations'] = array(",
-			"hidde",
-			"users()",
-			"user",
-			">\n",
-			"Water",
-			"$OUT",
-			"OUT",
-			"baseurl",
-			"url",
-			"site_url",
-			"debug($iframe_items,1);",
-			"as_array()",
-			"$items",
-			"render",
-			"mUser",
-			"user",
-			"id",
-			");\n",
-			"add",
-			"\t\t\t\t",
-			"();\n",
-			"b_dropdown"
+			"checkbox"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -480,27 +596,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "application/modules/admin/controllers/project.php",
+					"file": "assets/dist/plugins/form-builder/js/demo.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15362,
+						"buffer_size": 8600,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								616,
-								616
+								3246,
+								3246
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 1987.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -508,19 +626,222 @@
 				},
 				{
 					"buffer": 1,
-					"file": "application/modules/admin/controllers/User.php",
+					"file": "application/modules/admin/views/project/form/build_form.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12345,
+						"buffer_size": 3598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4069,
-								4085
+								398,
+								398
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "assets/dist/plugins/form-builder/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								707,
+								707
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/modules/admin/views/project/info_ajax.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/modules/admin/controllers/project.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10944,
+								10944
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5082.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "application/libraries/PFBuilder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18993,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14039,
+								13598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7962.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "application/core/MY_Controller.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12371,
+								12403
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6236.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "application/modules/admin/models/project_model.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2863,
+								2863
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 548.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "application/modules/admin/views/project/form/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1724,
+								1724
 							]
 						],
 						"settings":
@@ -533,7 +854,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -541,7 +862,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -578,7 +899,7 @@
 	"project": "UCPW.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":

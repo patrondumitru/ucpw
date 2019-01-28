@@ -3,21 +3,26 @@ $(document).ready(function() {
 var page = 0;
 document.getElementById('add-tab').addEventListener('click', function() {
         //var num_tabs = $("div .nav-tabs-custom ul li").length + 1;
+        $("#next" + page).html('Next');
         page = page +1;
-        $("div .nav-tabs-custom ul").append("<li><a href='#page_" + page + "' data-toggle='tab'>Page " + page + " </a></li>");
-        $("div .tab-content").append(
-            "<div class='tab-pane' id='page_" + page + "'><div id='stage" + page + "' class='build-wrap'></div><div class='box-footer'><button type='button' id='prev" + (page-1) + "' class='btn btn-default controlpage'>Back</button><button type='button' id='next" + page + "'class='btn btn-info pull-right controlpage'>Next</button></div></div>"
-        );
 
+        $("ul.nav-tabs").append("<li><a href='#page_" + page + "' data-toggle='tab'>Page " + page + " </a></li>");
+        var formappend ='';
+        formappend = "<div class='tab-pane' id='page_" + page + "'>";        
+        formappend += "<div id='stage" + page + "' class='build-wrap'></div><div class='box-footer'><button type='button' id='prev" + (page-1) + "' class='btn btn-default controlpage'>Back</button><button type='button' id='next" + page + "'class='btn btn-info pull-right controlpage'>Next</button></div></div>";
+
+        $("div .tab-content").append(formappend);
+        if ($("#next" + page).is(':last-child')){ $("#next" + page).html('Save form');}
+       
+        
         //var formBuilder = $('#stage'+page).formBuilder(fbOptions);
         var formBuilder = [];
+        
         formBuilder[page] = $('#stage'+page).formBuilder(fbOptions);
+        var fbPromise = formBuilder[page].promise;
+        //  var formBuilder = $('#stage1').formBuilder(fbOptions);
+        // var fbPromise = formBuilder.promise;
 
-        if (!$("#next" + page).is(':last-child')){ 
-          $(this).html('Next');
-        }else {
-          $(this).html('Save');
-         }
 
           document.getElementById("next" + page).addEventListener('click', function(pag) {                
               if (!$("div .nav-tabs-custom ul li.active").is(':last-child')){
@@ -25,7 +30,9 @@ document.getElementById('add-tab').addEventListener('click', function() {
               $("div .nav-tabs-custom ul li.active").removeClass('active').next().addClass('active');
               }
               else {
-                $(this).html('Save');
+                for (var i = 1; i <= page; i++) {
+                    console.log(formBuilder[i].actions.getData('json'));  
+                  }
               }
 
           });
@@ -34,6 +41,8 @@ document.getElementById('add-tab').addEventListener('click', function() {
             $("div .nav-tabs-custom ul li.active").removeClass('active').prev().addClass('active'); 
           });
     });
+
+
 
   document.getElementById('basicnext').addEventListener('click', function() {
     var num_tabs = $("div .nav-tabs-custom ul li") ;    
@@ -93,6 +102,14 @@ document.getElementById('add-tab').addEventListener('click', function() {
           'input-md': 'Medium',
           'input-lg': 'Large'
         }        
+      },
+      pageName: {
+        label: 'Page name',
+        value: 'Field Title',
+      },
+      groupName: {
+        label: 'Group name',  
+        value: 'Field Title',           
       }, 
       groupClass: {
         label: 'Filed alert color',
@@ -146,28 +163,27 @@ document.getElementById('add-tab').addEventListener('click', function() {
     },
     onSave: function(e, formData) {
       toggleEdit();
-      $('.render-wrap').formRender({
-        formData: formData,
-        templates: templates
-      });
+      console.log(formData);      
       window.sessionStorage.setItem('formData', JSON.stringify(formData));
     },
     stickyControls: {enable: true},
     sortableControls: false,
     fields: fields,
     templates: templates,
-    inputSets: inputSets,
+    //inputSets: inputSets,
     typeUserDisabledAttrs: typeUserDisabledAttrs,
     typeUserAttrs: typeUserAttrs,
     disableInjectedStyle: false,
     actionButtons: actionButtons,
-    disableFields: ['autocomplete','paragraph'],
-    replaceFields: replaceFields,
+    disableFields: ['autocomplete','paragraph','button','hidden','number','header','date'],
+    //replaceFields: replaceFields,
     //fieldRemoveWarn: true, // defaults to false 
     disabledFieldButtons: {},
     //controlPosition: 'right',
+    showActionButtons: false,
     disabledAttrs
   };
+
   var formData = window.sessionStorage.getItem('formData');
   var editing = true;
 
@@ -232,16 +248,7 @@ document.getElementById('add-tab').addEventListener('click', function() {
       });
     });
 
-    document.getElementById('getXML').addEventListener('click', function() {
-      alert(formBuilder.actions.getData('xml'));
-    });
-    document.getElementById('getJSON').addEventListener('click', function() {
-      alert(formBuilder.actions.getData('json', true));
-    });
-    document.getElementById('getJS').addEventListener('click', function() {
-      alert('check console');
-      console.log(formBuilder.actions.getData());
-    });
+    
   });
 
   //document.getElementById('edit-form').onclick = function() { toggleEdit();};
