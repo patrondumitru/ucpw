@@ -57,7 +57,7 @@ $config['ucpw'] = array(
 			$config['frameworks_dir'].'/css/ionicons.min.css',
 			$config['frameworks_dir'].'/css/master.min.css',
 			$config['plugins_dir'].'/colorpickersliders/colorpickersliders.min.css',
-			'http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,700italic',
+			'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,700italic',
 		)
 	),
 
