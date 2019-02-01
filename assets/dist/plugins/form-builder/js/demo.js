@@ -104,11 +104,11 @@ document.getElementById('add-tab').addEventListener('click', function() {
         }        
       },
       pageName: {
-        label: 'Page name',
+        label: 'Page name title',
         value: 'Field Title',
       },
       groupName: {
-        label: 'Group name',  
+        label: 'Group name title',  
         value: 'Field Title',           
       }, 
       groupClass: {

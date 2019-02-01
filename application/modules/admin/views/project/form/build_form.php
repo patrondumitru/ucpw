@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 		<div class="form-group">
 		                	<label for="formname" class="col-sm-2 control-label">Name</label>
 		                	<div class="col-sm-10"><input type="text" class="form-control" id="formname" placeholder="Enter form name"></div>
-		                </div>
+		                </div> 
 		                <div class="form-group">
 		                  <label for="iconcolor" class="col-sm-2 control-label">Icon Color</label>
 		                  <div class="col-sm-10"><select class="form-control" id="iconcolor">
