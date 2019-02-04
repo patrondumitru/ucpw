@@ -1,6 +1,7 @@
 $(document).ready(function() {
    // $("div .nav-tabs-custom").tabs();
 var page = 0;
+var formBuilder = []; 
 document.getElementById('add-tab').addEventListener('click', function() {
         //var num_tabs = $("div .nav-tabs-custom ul li").length + 1;
         $("#next" + page).html('Next');
@@ -15,11 +16,11 @@ document.getElementById('add-tab').addEventListener('click', function() {
         if ($("#next" + page).is(':last-child')){ $("#next" + page).html('Save form');}
        
         
-        //var formBuilder = $('#stage'+page).formBuilder(fbOptions);
-        var formBuilder = [];
         
         formBuilder[page] = $('#stage'+page).formBuilder(fbOptions);
-        var fbPromise = formBuilder[page].promise;
+        //var formBuilder = $('#stage'+page).formBuilder(fbOptions);
+        
+        //var fbPromise = formBuilder[page].promise;
         //  var formBuilder = $('#stage1').formBuilder(fbOptions);
         // var fbPromise = formBuilder.promise;
 
@@ -29,11 +30,7 @@ document.getElementById('add-tab').addEventListener('click', function() {
               $("div .tab-pane.active").removeClass('active').next().addClass('active');
               $("div .nav-tabs-custom ul li.active").removeClass('active').next().addClass('active');
               }
-              else {
-                for (var i = 1; i <= page; i++) {
-                    console.log(formBuilder[i].actions.getData('json'));  
-                  }
-              }
+              
 
           });
           document.getElementById("prev" + (page-1)).addEventListener('click', function() {            
@@ -55,6 +52,15 @@ document.getElementById('add-tab').addEventListener('click', function() {
   });
 
 
+$('#save-form').click(function(e){
+  e.preventDefault();
+  for (var i = 1; i <= page; i++) {
+    console.log('i=' + i + ' page=' + page);
+    console.log(formBuilder[i].actions.getData('json',true));  //getData('json',true)
+    console.log(formBuilder[i].actions.showData());  //getData('json',true)
+  }
+
+});
 //});
 
 //jQuery(function($) {
@@ -84,10 +90,6 @@ document.getElementById('add-tab').addEventListener('click', function() {
       }
     }
   }];
-
-  var templates = {};
-
-  var inputSets = []; //create group of fields
 
   var typeUserDisabledAttrs = {
     autocomplete: ['access']
@@ -163,18 +165,19 @@ document.getElementById('add-tab').addEventListener('click', function() {
     },
     onSave: function(e, formData) {
       toggleEdit();
-      console.log(formData);      
+      console.log(formData);
+      window.sessionStorage.setItem('formDataPage', page);      
       window.sessionStorage.setItem('formData', JSON.stringify(formData));
     },
     stickyControls: {enable: true},
     sortableControls: false,
     fields: fields,
-    templates: templates,
+    //templates: templates,
     //inputSets: inputSets,
     typeUserDisabledAttrs: typeUserDisabledAttrs,
     typeUserAttrs: typeUserAttrs,
     disableInjectedStyle: false,
-    actionButtons: actionButtons,
+    //actionButtons: actionButtons,
     disableFields: ['autocomplete','paragraph','button','hidden','number','header','date'],
     //replaceFields: replaceFields,
     //fieldRemoveWarn: true, // defaults to false 
@@ -205,51 +208,7 @@ document.getElementById('add-tab').addEventListener('click', function() {
 //  var formBuilder = $('#stage1').formBuilder(fbOptions);
  // var fbPromise = formBuilder.promise;
 
-  fbPromise.then(function(fb) {
-    var apiBtns = {
-      showData: fb.actions.showData,
-      clearFields: fb.actions.clearFields,
-      getData: function() {
-        console.log(fb.actions.getData());
-      },
-      setData: function() {
-        fb.actions.setData(setFormData);
-      },
-      addField: function() {
-        var field = {
-            type: 'text',
-            class: 'form-control',
-            label: 'Text Field added at: ' + new Date().getTime()
-          };
-        fb.actions.addField(field);
-      },
-      removeField: function() {
-        fb.actions.removeField();
-      },
-      testSubmit: function() {
-        var formData = new FormData(document.forms[0]);
-        console.log('Can submit: ', document.forms[0].checkValidity());
-        // Display the key/value pairs
-        console.log('FormData:', formData);
-        for(var pair of formData.entries()) {
-           console.log(pair[0]+ ': '+ pair[1]);
-        }
-      },
-      resetDemo: function() {
-        window.sessionStorage.removeItem('formData');
-        location.reload();
-      }
-    };
-
-    Object.keys(apiBtns).forEach(function(action) {
-      document.getElementById(action)
-      .addEventListener('click', function(e) {
-        apiBtns[action]();
-      });
-    });
-
-    
-  });
+  
 
   //document.getElementById('edit-form').onclick = function() { toggleEdit();};
 });

@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul class="nav nav-tabs">
               <li class="active"><a href="#page_0" data-toggle="tab">Basic</a></li> 
               <button id="add-tab" class='btn btn-warning'>Add new page</button>
+              <button id="save-form" class='btn btn-info'>Save form</button>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="page_0">
