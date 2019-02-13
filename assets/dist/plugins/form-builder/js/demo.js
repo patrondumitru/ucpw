@@ -13,7 +13,10 @@ document.getElementById('add-tab').addEventListener('click', function() {
         formappend += "<div id='stage" + page + "' class='build-wrap'></div><div class='box-footer'><button type='button' id='prev" + (page-1) + "' class='btn btn-default controlpage'>Back</button><button type='button' id='next" + page + "'class='btn btn-info pull-right controlpage'>Next</button></div></div>";
 
         $("div .tab-content").append(formappend);
-        if ($("#next" + page).is(':last-child')){ $("#next" + page).html('Save form');}
+        if ($("#next" + page).is(':last-child')){ 
+          $("#next" + page).html('Save form');
+
+        }
        
         
         
@@ -52,14 +55,34 @@ document.getElementById('add-tab').addEventListener('click', function() {
   });
 
 
+
 $('#save-form').click(function(e){
   e.preventDefault();
-  for (var i = 1; i <= page; i++) {
-    console.log('i=' + i + ' page=' + page);
-    console.log(formBuilder[i].actions.getData('json',true));  //getData('json',true)
-    console.log(formBuilder[i].actions.showData());  //getData('json',true)
-  }
+  var formsdata = [];
+  var form = {};
+  form["form_name"] = $('#formname').val();
+  form["form_color"] = $('#iconcolor').val();
+  form["form_icon"] = $('#icon').val();
+  var person = {
+    formname: $('#formname').val(),
+    iconcolor: $('#iconcolor').val(),
+    icon: $('#icon').val()};
 
+  for (var i = 1; i <= page; i++) {
+    formsdata[i-1] =  formBuilder[i].actions.getData('json',true);
+    //console.log(formBuilder[i].actions.getData('json',true));  //getData('json',true)
+    //console.log(formBuilder[i].actions.showData());  //getData('json',true)
+    }
+    $.ajax({
+            type: "POST",
+            url: "http://ucpw.test/admin/project/saveform/",            
+            //data: JSON.stringify({ data : formsdata, newform : form }),//JSON.stringify({ data: formdata }),
+            data: JSON.stringify({formsdata, form }),//JSON.stringify({ data: formdata }),
+            //contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data){alert(data);},
+            failure: function(errMsg) {alert(errMsg);}
+      });
 });
 //});
 

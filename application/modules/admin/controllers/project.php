@@ -319,10 +319,14 @@ public function index()
 		
 		$datajson = json_decode($data);
 
-		//debug($data,1);
+		$this->project->form_last_position($datajson);
 		
-		//echo "Test";
-		$form_id = 1;
+		exit();
+		debug($datajson,1);
+		$datajson->formsdata;
+		$datajson->form;
+		$form_id = $this->newform($datajson->form);		
+
 		foreach ($datajson as $key => $field)
 		{
 			$fields[$key+1] = $this->checkformfild($field, $form_id, $key+1);				
@@ -460,6 +464,14 @@ public function index()
 		
 		if (isset($data->values)) $result['str_field_value'] = $data->values;
 		return $result;
+	}
+
+	private function newform($data)
+	{
+		$data['order_position'] = "";
+
+		return $this->project->createform($data);
+
 	}
 
 }
