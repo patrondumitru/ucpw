@@ -388,14 +388,11 @@ class Project_model extends MY_Model {
 		return $this->insert($data);
 	}
 
-	public function form_last_position($data)
+	public function form_last_position()
 	{
 		$this->primary_key = 'form_id';
 		$this->_table = 'project_form';
-
-		 $result = $this->order_by('order_position', 'DESC')->limit(1)->get_all();
-		 debug($result);
-		return true;
-		//return $this->insert($data);
+		$result = $this->db->select_max('order_position')->get($this->_table)->row()->order_position;		
+		return $result;		
 	}
 }

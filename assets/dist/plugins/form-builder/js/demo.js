@@ -63,10 +63,10 @@ $('#save-form').click(function(e){
   form["form_name"] = $('#formname').val();
   form["form_color"] = $('#iconcolor').val();
   form["form_icon"] = $('#icon').val();
-  var person = {
-    formname: $('#formname').val(),
-    iconcolor: $('#iconcolor').val(),
-    icon: $('#icon').val()};
+  if(form["form_name"] == '') {
+      alert('Please fill name of the form');
+      return false;
+    }
 
   for (var i = 1; i <= page; i++) {
     formsdata[i-1] =  formBuilder[i].actions.getData('json',true);
@@ -79,9 +79,9 @@ $('#save-form').click(function(e){
             //data: JSON.stringify({ data : formsdata, newform : form }),//JSON.stringify({ data: formdata }),
             data: JSON.stringify({formsdata, form }),//JSON.stringify({ data: formdata }),
             //contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function(data){alert(data);},
-            failure: function(errMsg) {alert(errMsg);}
+            //dataType: "json",
+            success: function(data){alert(data); },
+            failure: function(errMsg) {alert(errMsg); }
       });
 });
 //});

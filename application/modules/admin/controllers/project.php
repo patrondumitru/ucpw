@@ -315,18 +315,18 @@ public function index()
 
 	public function saveform()
 	{
-		$data = file_get_contents('php://input');
+		$datajson = json_decode(file_get_contents('php://input'));
 		
-		$datajson = json_decode($data);
+		//$this->project->form_last_position();
+		//$this->render_ajax('project/form/ajax');
 
-		$this->project->form_last_position($datajson);
 		
-		exit();
-		debug($datajson,1);
+		
+		debug($datajson->form,1);
 		$datajson->formsdata;
 		$datajson->form;
 		$form_id = $this->newform($datajson->form);		
-
+		//get_next_id()
 		foreach ($datajson as $key => $field)
 		{
 			$fields[$key+1] = $this->checkformfild($field, $form_id, $key+1);				
